@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: green;
+    --primary-color: yellow;
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: var(--main-color);
+    height: 10vh;
+
+}
+
+nav h3 {
+    margin: auto 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li>a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    margin-right: 50px;
+}
+
+nav ul:nth-child(2) ul {
+    display: none;
+}
+
+nav ul:nth-child(2):hover ul {
+    display: flex;
+    position: fixed;
+    background-color: green;
+    top: 10%;
+    right: 0%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav ul:nth-child(2) ul li {
+    margin: auto 15px;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+}
+
+.container>div {
+    height: 100%;
+    width: 50%;
+}
+
+.container .split {
+    background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.5), rgba(240, 240, 22, 0.5)), url('Student-1.jpg');
+    background-position: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container .split .h1 {
+    font-family: segoe script, segoe print, 'Times New Roman', Times, serif;
+    color: var(--primary-color);
+    margin: auto 39px;
+    text-shadow: 1px 2px 1px white;
+}
+
+.container .split .h1 .first {
+    margin-left: 40px;
+}
+
+.container .split .h1 .second {
+    margin-left: 180px;
+}
+
+.container .login{
+    position: relative;
+}
+.container .login .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .login .title {
+    margin: 50px;
+    color: var(--main-color);
+
+}
+
+.container .login form {
+    color: green;
+    width: 65%;
+    height: 50vh;
+}
+
+.container .login fieldset {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: inherit;
+    border-radius: 7px;
+    box-shadow: 5px 5px 25px black;
+}
+
+.container .login form .common {
+    font-weight: 600;
+    margin: 25px;
+}
+
+.container .login fieldset legend {
+    margin-left: 40px;
+    color: rgb(158, 158, 56);
+    font-weight: 600;
+}
+
+.container .login form .btn {
+    display: flex;
+    justify-content: center;
+}
+
+input {
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+#btn {
+    border: 2px solid green;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+    background-color: white;
+    border-color: green;
+    width: 75px;
+}
+
+#btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: green;
+    transition: 1s;
+}
+
+input:focus {
+    outline: 3px solid rgb(54, 207, 54);
+}
+
+.container .login .title .mobile-h1 {
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(191, 190, 190);
+}
+.problem-lg{
+    position: absolute;
+    width: 85%;
+    height: 9vh;
+    bottom: 25px;
+    left: 7%;
+    border-radius: 5px;
+    background-color: greenyellow;
+    opacity: .9;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.problem-lg .text{margin: auto 25px;}
+@media screen and (max-width: 800px) {
+    .split {
+        display: none;
+    }
+
+    .login {
+        width: 100%;
+    }
+
+    .container .login .title h3 {
+        display: none;
+    }
+
+    .container .login .title .mobile-h1 {
+        display: block;
+        font-family: segoe script, segoe print, 'Times New Roman', Times, serif;
+        color: var(--primary-color);
+        margin: 40px;
+        text-shadow: 1px 2px 1px white;
+    }
+
+    .container .login .title .mobile-h1 .second {
+        margin-left: 160px;
+    }
+
+    .container>div {
+        width: 100%;
+        background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.5) 5%, rgba(240, 240, 22, 0.5)), url('Student-1.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .container .login form {
+        color: yellow;
+    }
+
+    .container .login fieldset legend {
+        color: yellow;
+    }
+
+    #btn {
+        background-color: transparent;
+        color: white;
+    }
+}
