@@ -162,6 +162,7 @@ input {
     background-color: white;
     color: green;
     transition: 1s;
+    border: white;
 }
 
 input:focus {
@@ -192,11 +193,12 @@ input:focus {
     left: 7%;
     border-radius: 5px;
     background-color: greenyellow;
-    opacity: .9;
+    opacity: .8;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    font-family: Arial, 'Times New Roman', Times, serif;
 }
 .problem-lg .text{margin: auto 25px;}
 @media screen and (max-width: 800px) {

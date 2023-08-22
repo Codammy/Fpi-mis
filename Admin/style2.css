@@ -41,25 +41,9 @@ nav ul li>a {
 
 nav ul li {
     margin-right: 50px;
+    cursor: pointer;
 }
 
-nav ul:nth-child(2) ul {
-    display: none;
-}
-
-nav ul:nth-child(2):hover ul {
-    display: flex;
-    position: fixed;
-    background-color: green;
-    top: 10%;
-    right: 0%;
-    padding: 15px;
-    border-radius: 5px;
-}
-
-nav ul:nth-child(2) ul li {
-    margin: auto 15px;
-}
 ::-webkit-scrollbar {
     width: 8px;
 }
