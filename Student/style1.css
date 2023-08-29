@@ -60,7 +60,6 @@ nav ul:nth-child(2):hover ul {
 nav ul:nth-child(2) ul li {
     margin: auto 15px;
 }
-
 .container {
     height: 100vh;
     display: flex;
@@ -109,30 +108,23 @@ nav ul:nth-child(2) ul li {
 }
 
 .container .login form {
-    color: green;
-    width: 65%;
-    height: 50vh;
 }
 
-.container .login fieldset {
+.container .login form {
+    width: 65%;
+    color: green;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: inherit;
+    height: 50vh;
     border-radius: 7px;
-    box-shadow: 5px 5px 25px black;
+    box-shadow: .1px .1px 7px black;
 }
 
 .container .login form .common {
     font-weight: 600;
     margin: 25px;
-}
-
-.container .login fieldset legend {
-    margin-left: 40px;
-    color: rgb(158, 158, 56);
-    font-weight: 600;
 }
 
 .container .login form .btn {
@@ -159,10 +151,9 @@ input {
 
 #btn:hover {
     cursor: pointer;
-    background-color: white;
-    color: green;
-    transition: 1s;
-    border: white;
+    background-color: green;
+    color: white;
+    transition: .6s;
 }
 
 input:focus {
