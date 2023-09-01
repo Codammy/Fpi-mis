@@ -71,7 +71,7 @@ nav ul:nth-child(2) ul li {
 }
 
 .container .split {
-    background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.5), rgba(240, 240, 22, 0.5)), url('./Student/Student-1.jpg');
+    background-image: linear-gradient(to bottom right, rgba(0, 128, 0, 0.5), rgba(240, 240, 22, 0.5)), url('Student-1.jpg');
     background-position: 25%;
     background-repeat: no-repeat;
     background-size: cover;
