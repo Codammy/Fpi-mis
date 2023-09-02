@@ -1,14 +1,84 @@
- http = require('http');
-fs = require('fs')
-http.createServer((req, res)=>{
-    res.writeHead(200, {'Content-type': 'text/html'})
-console.log('request sent')
-	fs.readFile('index.html', (err, buff)=>{
-	if (err)
-		console.log('file does\'nt exist')
-	res.write('<head><link rel="stylesheet" href="style1.css"></head>')
-	res.write(buff)
-	console.log(req.url, req.method)
-	res.end()
-	})
-}).listen(8080, 'localhost', ()=>console.log('server started at port 8080 and awaiting request'))
+const http = require('http')
+const fs = require('fs')
+function backend(req, res) {
+	res.writeHead(200, { 'Content-type': 'text/html' })
+
+	// const path = '.' + req.url;
+	// fs.readFile(path, (err, data)=>{
+	// 	if (err)
+	// 		console.log("wrong file path or file doesn't. " + path);
+	// 	else
+	// 		{
+	// 			res.write(data)
+	// 			console.log('requested ' + req.url);
+	// 		}
+	// 		res.end()
+	// })
+	const path = req.url;
+	switch (path) {
+		case '/':
+			fs.readFile('./index.html', (err, data) => {
+				if (err)
+					console.log("wrong file path or file doesn't. exist" + path);
+				else {
+					res.write(data)
+					console.log('requested ' + req.url);
+				}
+				res.end()
+			})
+			break;
+		case '/admin-login':
+			fs.readFile('admin/login.html', (err, data) => {
+				if (err)
+					console.log("wrong file path or file doesn't. exist " + path);
+				else {
+					res.write(data)
+					console.log('requested ' + req.url);
+				}
+				res.end()
+			})
+			break;
+		case '/student-login':
+			fs.readFile('student/login.html', (err, data) => {
+				if (err)
+					console.log("wrong file path or file doesn't. exist " + path);
+				else {
+					res.write(data)
+					console.log('requested ' + req.url);
+				}
+				res.end()
+			})
+			break;
+		case '/admin':
+			fs.readFile('admin/admin.html', (err, data) => {
+				if (err)
+					console.log("wrong file path or file doesn't. exist " + path);
+				else {
+					res.write(data)
+					console.log('requested ' + req.url);
+				}
+				res.end()
+			})
+			break;
+		case '/student':
+			fs.readFile('student/student.html', (err, data) => {
+				if (err)
+					console.log("wrong file path or file doesn't. exist " + path);
+				else {
+					res.write(data)
+					console.log('requested ' + req.url);
+				}
+				res.end()
+			})
+			break;
+		case 'login':
+			res.setHeader({'Location': '/student-login'})// REDIRECT NOT FUNCTIONAL
+			break;
+		default:
+			res.write(`<h1>${path}<br />404 PAGE NOT FOUND</h1>`)
+			res.end()
+			break;
+	}
+}
+const server = http.createServer(backend)
+server.listen(3000, 'localhost', () => console.log("Server started... "))
