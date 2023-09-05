@@ -1,20 +1,22 @@
 const bell = document.getElementsByClassName("fa-bell")[0];
 const black = document.createElement("aside");
+const contain = document.createElement('article');
 const cancel = document.createElement("i");
+black.appendChild(contain)
 black.setAttribute('class', 'ntc')
 cancel.setAttribute('class', 'fa-solid fa-xmark')
+contain.className = 'zero-height'
 
 function displayNotifications(len) {
 
+    contain.className = 'drop-down-notification'
     function notifications(ln) {
         document.body.append(black);
         document.body.append(cancel);
-        const contain = document.createElement('article');
+        black.appendChild(contain)
         const clearAll = document.createElement("p");
         const viewAll = document.createElement("a");
-        viewAll.setAttribute('href', '#')
-        black.appendChild(contain)
-        contain.classList += 'drop-down-notification'
+        viewAll.setAttribute('href', './messages.html')
 
         viewAll.textContent = 'View all'
         clearAll.textContent = 'Clear all'

@@ -43,11 +43,12 @@ nav ul li {
     margin-right: 50px;
 }
 
-nav ul:nth-child(2) ul {
+nav ul li div {
     display: none;
+    background-color: yellow;
 }
 
-nav ul:nth-child(2):hover ul {
+nav ul:hover li div {
     display: flex;
     position: fixed;
     background-color: green;
@@ -57,7 +58,7 @@ nav ul:nth-child(2):hover ul {
     border-radius: 5px;
 }
 
-nav ul:nth-child(2) ul li {
+nav ul li {
     margin: auto 15px;
 }
 .container {
