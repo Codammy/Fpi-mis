@@ -30,7 +30,7 @@ nav h3 {
 
 nav ul {
     list-style: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -39,27 +39,28 @@ nav ul li>a {
     text-decoration: none;
 }
 
-nav ul li {
-    margin-right: 50px;
-}
 
-nav ul li div {
+nav ul li .sub-nav {
     display: none;
-    background-color: yellow;
 }
-
-nav ul:hover li div {
-    display: flex;
-    position: fixed;
+nav ul li:hover .sub-nav {
+    position: absolute;
+    display: block;
+    margin-left: -140px;
+    z-index: 99;
+}
+.sub-nav ul{
+    margin-top: 24px;
     background-color: green;
-    top: 10%;
-    right: 0%;
     padding: 15px;
     border-radius: 5px;
 }
+.sub-nav ul li{
+    margin: auto 17px;
+}
 
 nav ul li {
-    margin: auto 15px;
+    margin: auto 25px;
 }
 .container {
     height: 100vh;

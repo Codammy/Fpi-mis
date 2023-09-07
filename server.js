@@ -1,50 +1,29 @@
-const http = require('http')
-const fs = require('fs')
-console.log(__filename)
-function backend(req, res) {
-	res.writeHead(200, { 'Content-type': 'text/html' })
+const express = require('express')
+const ejs = require('ejs')
+const port = 5000
+const app = express()
 
-	let path = '.';
-	switch (req.url) {
-		case '/admin-login':
-			path += '/Admin/login.html'
-			break;
-		case '/student-login':
-			path += '/Student/login.html'
-			break;
-		case '/admin':
-			path += '/Admin/admin.html'
-			break;
-		case '/student':
-			path += 'Student/student.html'
-			break;
-		case '/login':
-			res.writeHead(301, {'Location': '/student-login'})// REDIRECT NOT FUNCTIONAL
-			res.statusCode = 301
-			res.end()
-			break;
-		default:
-			if (req.url == '/')
-				path += '/index.html'
-			else
-				path += req.url;
-			break;
-	}
-	fs.readFile(path, (err, data) => {
-		if (err)
-		{
-			console.log("wrong file path or file doesn't. exist " + path);
-			res.write(`<h1>${req.url}<br />404 PAGE NOT FOUND</h1>`)
-			res.statusCode = 404
-			res.end()
-		}
-		else {
-			res.write(data)
-			console.log('requested ' + req.url);
-		}
-		console.log(res.statusCode)
-		res.end()
-	})
-}
-const server = http.createServer(backend)
-server.listen(3000, 'localhost', () => console.log("Server started... "))
+app.set('view engine', 'ejs')
+
+app.use(express.static(__dirname))
+app.get('/', (req, res)=>{
+    res.sendFile('index', {root: __dirname})
+    console.log(req.url, req.method, res.statusCode)
+})
+app.get('/admin', (req, res)=>{
+    res.sendFile('Admin/login.html', {root: __dirname})
+    console.log(req.url, req.method, res.statusCode)
+})
+app.get('/student', (req, res)=>{
+    console.log(req.url, req.method, res.statusCode)
+    res.sendFile('Student/login.html', {root: __dirname})
+})
+app.get('/login', (req, res)=>{
+    res.redirect('/student')
+    console.log(req.url, req.method, res.statusCode)
+})
+app.use((req, res)=>{
+    res.status(404).sendFile('404.html', {root: __dirname})
+    console.log(req.url, req.method, res.statusCode)
+})
+app.listen(port, ()=>{console.log("Server started")})
