@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: green;
+    --primary-color: #f0e260;
+}
+
+body {
+    max-width: 100%;
+    max-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: radial-gradient(circle, var(--main-color), var(--primary-color));
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: var(--main-color);
+    height: 10vh;
+
+}
+
+nav h3 {
+    margin: auto 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li>a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li {
+    margin-right: 50px;
+}
+
+nav ul:nth-child(2) ul {
+    display: none;
+}
+
+nav ul:nth-child(2):hover ul {
+    display: flex;
+    position: fixed;
+    background-color: green;
+    top: 10%;
+    right: 0%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+nav ul:nth-child(2) ul li {
+    margin: auto 15px;
+}
+article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+section{
+    background-color: white;
+    width: 60vw;
+    height: 50vh;
+    border-radius: 7px;
+    box-shadow: 0 2px 10px black;
+}
+section h5{
+    color: var(--main-color);
+    /* text-shadow: 2px 5px 5px var(--main-color); */
+    margin: 25px;
+    font-weight: 500;
+}
+section h5::after{
+    content: "";
+}
+section form{
+    margin: 20px auto;
+    margin: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+section form .common {
+    color: green;
+    font-weight: 600;
+    padding: 15px;
+}
+section form .password input{
+    margin-left: 10px;
+} 
+section form input {
+    padding: 9px;
+    outline: none;
+    border-radius: 7px;
+    border: 2px solid rgb(117, 135, 5);
+}
+section form input:focus {
+    outline: double 2px greenyellow;
+}
+section form button {
+    background-color: white;
+    border: 2px solid yellowgreen;
+    border-radius: 5px;
+    outline: none;
+    margin-top: 5%;
+    padding: 10px 20px;
+}
+section form button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    transition: 1s;
+    box-shadow: 7px 5px 9px grey;
+}
+
+@media screen and (max-width: 800px) {
+    section form .password input{
+        margin-left: 0;
+    } 
+}

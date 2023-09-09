@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-color: green;
+  --primary-color: #f0e260;
+}
+
+body {
+  max-width: 100%;
+  max-height: 100%;
+  font-family: 'Times New Roman', Times, serif, Helvetica, sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: var(--main-color);
+  height: 7vh;
+}
+
+nav h3 {
+  margin: auto 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li > a {
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li {
+  margin-right: 50px;
+  cursor: pointer;
+}
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgray;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(191, 190, 190);
+}
+.aside {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.user-info {
+  height: fit-content;
+  padding: 15px;
+}
+.user-info .user-profile {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.user-info .user-profile img{
+  margin: auto;
+  height: inherit;
+  width: inherit;
+  /* border: 4px dotted black; */
+  border-radius: 50%;
+}
+.user-info .user-id {
+  width: fit-content;
+}
+.notifications {
+  width: fit-content;
+}
+.item {
+  margin: 15px auto;
+}
+.problem-lg {
+  position: absolute;
+  width: 85%;
+  height: 9vh;
+  bottom: 25px;
+  left: 7%;
+  border-radius: 5px;
+  background-color: greenyellow;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-family: Arial, "Times New Roman", Times, serif;
+}
+.problem-lg .text {
+  margin: auto 25px;
+}
+

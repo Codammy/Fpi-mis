@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student</title>
+    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <script defer src="/javascripts/view.js"></script>
+    <link rel="stylesheet" href="/stylesheets/student.css">
+     <link rel="stylesheet" href="/stylesheets/ntc.css">
+</head>
+<body>
+     <header>
+        <nav>
+            <h3>
+                FPI MIS
+            </h3>
+            <ul>
+                <li><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a></li>
+                <li><a href="/login"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="aside">
+		<h2 class="greeting">Good afternoon <%= user.name %>, </h2>
+            <i class="fa-solid fa-bell fa-1xl" style="color: #43c71f;"></i>        </section>
+        <section class="user-info">
+		<div class="user-profile item">
+			<% if (user.img.length) { %>
+			<img src= "<%= user.img %>" alt="<%= user.name %>">
+			<% } else {%>
+				<span> No photo </ span>
+			<% } %>
+		</ div>
+	    <div class="user-id item"><h3><%= user.matric_no %></h3></div>
+        </section>
+        <section class="item notifications"><p>You have <b>5</b> new notifications </p></section>
+    </main>
+    <footer class="problem-lg">
+        <b class="text" style="color: black;">Create a complain</b>
+        <span class="text">
+            <i class="fa-solid fa-circle-question" style="color: #58ff4d;"></i>
+        </span>
+    </footer>
+</body>
+</html>
