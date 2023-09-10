@@ -24,7 +24,8 @@
     </header>
     <main>
         <section class="aside">
-		<h2 class="greeting">Good afternoon <%= user.name %>, </h2>
+            <% const names = user.name.split(" ") %>
+		<h2 class="greeting">Good afternoon <%= names[1] %>, </h2>
             <i class="fa-solid fa-bell fa-1xl" style="color: #43c71f;"></i>        </section>
         <section class="user-info">
 		<div class="user-profile item">

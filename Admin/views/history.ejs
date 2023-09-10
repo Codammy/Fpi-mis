@@ -105,27 +105,15 @@
         </div>
     </header>
     <main>
+    <% data.forEach(function(dt) {%>
         <div class="history">
-            <div class="date e"><b> Date:</b> <span>15-07-2023</span></div>
-            <div class="time e"><b> Time:</b> <span>2:00 AM</span></div>
-            <div class="desc e"><b> Title:</b> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum unde fugiat distinctio quidem libero sint quae totam vero nemo eos!</span>
+            <div class="date e"><b> Date:</b> <span><%= dt.date.dt %></span></div>
+            <div class="time e"><b> Time:</b> <span><%= dt.date.time %></span></div>
+            <div class="desc e"><b> Title:</b> <span><%= dt.title %></span>
             </div>
             <span class="view"><a href="#">View</a></span>
         </div>
-        <div class="history">
-            <div class="date e"><b> Date:</b> <span>15-07-2023</span></div>
-            <div class="time e"><b> Time:</b> <span>2:00 AM</span></div>
-            <div class="desc e"><b> Title:</b> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum unde fugiat distinctio quidem libero sint quae totam vero nemo eos!</span>
-            </div>
-            <span class="view"><a href="#">View</a></span>
-        </div>
-        <div class="history">
-            <div class="date e"><b> Date:</b> <span>15-07-2023</span></div>
-            <div class="time e"><b> Time:</b> <span>2:00 AM</span></div>
-            <div class="desc e"><b> Title:</b> <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum unde fugiat distinctio quidem libero sint quae totam vero nemo eos!</span>
-            </div>
-            <span class="view"><a href="#">View</a></span>
-        </div>
+        <% })%>
     </main>
     <footer>CDM SOFTWARES</footer>
 </body>

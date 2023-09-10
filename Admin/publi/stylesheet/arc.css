@@ -41,7 +41,6 @@ header .page-name{
     border-radius: 50%;
 }
 main{
-    overflow-y: scroll;
     height: 100%;
 }
 .message{
@@ -65,7 +64,7 @@ main{
         right: 10%;
         position: absolute;
         width: 250px;
-        background-color: gainsboro;
+        background-color: azure;
         padding: 5px;
         display: flex;
         justify-content: space-around;
