@@ -4,22 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FPI MIS</title>
+    <script defer src="/javascripts/writeFormat.js"></script>
+    <link rel="stylesheet" href="stylesheet/new.css">
+    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <form action="/new" method="post">
+    <div class="format">
+        <select name="doctype" id="select">
+            <option value="" class="select-case" selected disabled>Select message format</option>
+            <option value="txt"  class="select-case"><span class="txt">Text only</span></option>
+            <option value="img" class="select-case"><span>Image</span></option>
+            <option value="docx" class="select-case"><span>Document</span></option>
+            <option value="txt-img" class="select-case"><span>Text + Image</span></option>
+        </select>
+        <div class="hide-tmp">
+            <div class="contain">
+                <i class="fa-solid fa-xmark" style="display: none;"></i>
+            <label for="file" class="decorate-p"></label>
+            <input type="file" class="" id="file" name="file">
+        </div>
+        </div>
+    </div>
+    <div class="hide" id="include_hf">
         <label for="header">Include header</label>
         <input id="header" type="checkbox">
         <label for="footer">Include footer</label>
-        <input id="header" type="checkbox">
-        <input type="text">
-        <select name="" id="">
-            <option value="" selected disabled>Choose Message type</option>
-            <option value="" >Document</option>
-            <option value="" >Img</option>
-            <option value="" >Text</option>
-        </select>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
-        <button type="submit">Send</button>
+        <input id="footer" type="checkbox">
+    </div>
+    <div class="hide">
+        <textarea name="text" id="txt" cols="30" rows="10"></textarea>
+    </div>
+    <button type="submit" id="submit" class="button">Upload</button>
     </form>
 </body>
 </html>
