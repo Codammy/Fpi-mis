@@ -35,7 +35,7 @@ app.get('/history', (req, res)=>{
 app.get('/create-new', (req, res)=>{
     res.render('Admin/views/create-new', {root: __dirname})
 })
-app.get('/home', (req, res)=>{
+app.post('/home', (req, res)=>{
     console.log(req.url, req.method, res.statusCode)
     res.render('Admin/views/admin', {root: __dirname})
 })
