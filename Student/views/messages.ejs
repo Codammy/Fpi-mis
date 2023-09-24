@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Messages</title>
-    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../stylesheets/msg.css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-</head>
+<%- include('./components/head.ejs') %>
 <body>
     <header>
         <div class="image">
@@ -16,7 +7,7 @@
         <nav>Admin - 1</nav>
     </header>
     <main class="page">
-        <a href="/dashboard">
+        <a href="/student/dashboard">
         <i class="fa-solid fa-arrow-left fa-lg"></i>
         </a>
         <% data.forEach(function(msg) {%>

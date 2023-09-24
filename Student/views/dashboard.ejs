@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student</title>
-    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <script defer src="/javascripts/view.js"></script>
-    <link rel="stylesheet" href="/stylesheets/student.css">
-     <link rel="stylesheet" href="/stylesheets/ntc.css">
-</head>
+<%- include('./components/head.ejs') %>
 <body>
      <header>
         <nav>
@@ -18,7 +7,7 @@
             </h3>
             <ul>
                 <li><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a></li>
-                <li><a href="/login"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+                <li><a href="/student/login"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </nav>
     </header>
@@ -36,14 +25,48 @@
 			<% } %>
 		</ div>
 	    <div class="user-id item"><h3><%= user.matric_no %></h3></div>
-        </section>
-        <section class="item notifications"><p>You have <b>5</b> new notifications </p></section>
-    </main>
-    <footer class="problem-lg">
-        <b class="text" style="color: black;">Create a complain</b>
-        <span class="text">
-            <i class="fa-solid fa-circle-question" style="color: #58ff4d;"></i>
-        </span>
-    </footer>
+    </section>
+    <section class="item notifications"><p>You have <b>5</b> new notifications </p></section>
+</main>
+<section class="problem-lg">            
+    <b>?</b>
+</section>
+<section class="hide">
+    <form action="#" class=" cmp form-style">
+        <h3>Make a complain</h3>
+        <div class="title">
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title">
+        </div>
+        <div class="body">
+            <label for="body">Body: </label>
+            <textarea name="body" id="body" rows="5"></textarea>
+            <button type="submit">Send</button>
+        </div>
+    </form>
+</section>
+<script>
+    const complain = document.querySelector('.problem-lg');
+    const makeComplain = document.querySelector('.hide');
+    const form = makeComplain.children[0]
+    let condition = true
+    function occur (c){
+        console.log(c);
+        if (c)
+        {
+        makeComplain.className = 'make-complain'
+        form.classList.remove('cmp')
+        }
+        else {
+            makeComplain.className = 'hide'
+            form.classList.add('cmp')
+        }
+        return !c
+    }
+    complain.addEventListener('click', ()=>{
+        condition = occur(condition)
+        });
+</script>
+    <script defer src="/javascripts/view.js"></script>
 </body>
 </html>

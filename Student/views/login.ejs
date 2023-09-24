@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="../stylesheets/login.css">
-    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-</head>
-
+<%- include('./components/head.ejs') %>
 <body>
     <header>
         <nav>
@@ -22,7 +11,7 @@
                     Login
                     <aside class="sub-nav">
                     <ul><li><a href="/admin">Admin</a></li><hr>
-                    <li><a href="/student">Student</li></a></ul>
+                    <li><a href="/student/login">Student</li></a></ul>
                 </li>
             </aside>
             </ul>
@@ -46,7 +35,7 @@
                 </span>
             </header>
             <div class="form">
-                <form action="/dashboard">
+                <form action="/student/dashboard">
                         <div class="user-name common">
                             <label for="matric-no">MATRIC-NO: </label>
                             <input type="text" name="matric-no" id="matric-no" required>
@@ -60,14 +49,16 @@
                         </div>
                 </form>
             </div>
-            <section class="problem-lg">
-                <span class="text" style="color: rgb(126, 116, 116);">Contact school admin incase of login issues</span>
-                <span class="text">
-                    <i class="fa-solid fa-circle-question" style="color: #58ff4d;"></i>
-                </span>
+            <section class="problem-lg">                 
+                   <b>?</b>
+
+                   
             </section>
         </div>
     </article>
+    <script>
+        const complain = document.querySelector('.problem-lg');
+        complain.addEventListener('click', ()=> alert('Contact school admin incase of login issue'))
+    </script>
 </body>
-
 </html>

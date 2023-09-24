@@ -84,22 +84,88 @@ nav ul li {
 .item {
   margin: 15px auto;
 }
-.problem-lg {
-  position: absolute;
-  width: 85%;
-  height: 9vh;
-  bottom: 25px;
-  left: 7%;
-  border-radius: 5px;
-  background-color: greenyellow;
-  opacity: 0.8;
+.problem-lg{
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  font-size: 16px;
-  font-family: Arial, "Times New Roman", Times, serif;
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  bottom: 21px;
+  right: 4%;
+  border-radius: 50%;
+  color: white;
+  background-color: green;
+  font-size: 19px;
 }
-.problem-lg .text {
-  margin: auto 25px;
+.problem-lg:hover{
+  border: 4px solid greenyellow;
+  cursor: pointer;
 }
-
+.hide{
+  transition: 1s;
+  height: 0;
+}
+.make-complain{
+  transition-property: height;
+  transition-duration: .2s;
+  margin: 15px auto;
+  width: 60%;
+  height: 55vh;
+  border: 3px solid green;
+  border-radius: 5px;
+}
+.cmp{
+  display: none;
+}
+.form-style{}
+.form-style .title{
+  width: 70%;
+  height: fit-content;
+  margin: 15px auto;
+}
+.form-style .body{
+  width: 70%;
+  height: fit-content;
+  margin: 25px auto;
+}
+.form-style h3{
+  margin: 25px;
+}
+.form-style input{
+  width: 100%;
+  border: 2px solid #ccc;
+  padding: 7px;
+  outline: none;
+  border-radius: 5px;
+}
+.form-style textarea{
+  resize: none;
+  width: 100%;
+  border: 2px solid #ccc;
+  padding: 7px;
+  outline: none;
+  border-radius: 5px;
+}
+.form-style input:hover, .form-style input:focus{
+  outline-width: 5px;
+  width: 100%;
+  outline-color: greenyellow;
+  border-radius: 5px;
+}
+button[type = 'submit']{
+  margin: 25px auto;
+  outline: none;
+  width: 100px;
+  padding: 7px;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid green;
+}
+button[type = 'submit']:hover, button[type = 'submit']:focus{
+  cursor: pointer;
+  transition: .2s;
+  background-color: green;
+  color: white;
+  border: 2px solid green;
+}

@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-     <link rel="stylesheet" href="/stylesheet/admin.css">
-    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    
-    <title>Admin</title>
-</head>
+<%- include('./components/head.ejs') %>
 <body>
      <header>
         <nav>
@@ -21,19 +11,18 @@
         </nav>
     </header>
     <div class="section">
-    <span class="complaint-box"><a href="#"><i class="fa-solid fa-inbox fa-xl" title="Complaint-box" style="color: rgb(17, 230, 17);"></i></a></span>
-    <span class="history"><a href="/history">View history</a></span>
+    <span class="complaint-box"><a href="/admin/complaint-box"><i class="fa-solid fa-box-open fa-xl" title="Complaint-box" style="color: rgb(17, 230, 17);"></i></a></span>
+    <span class="history"><a href="/admin/history">View history</a></span>
 </div>
-<a href="/create-new">
+<a href="/admin/create-new">
     <article title="create-new">
         <!-- <i class="fa-solid fa-wand-magic-sparkles fa-2xl"></i> -->
         <i class="fa-solid fa-plus fa-2xl
         "></i>
     </article>
 </a>
-<div class="drafts"><a href="/archive" title="Drafts"><i class="fa-solid fa-box-archive fa-xl" style="color: rgb(17, 230, 17);"></i></a></div>
+<div class="drafts"><a href="/admin/archive" title="Drafts"><i class="fa-solid fa-box-archive fa-xl" style="color: rgb(17, 230, 17);"></i></a></div>
     <footer>
-        <!-- <span>An ND2 project of the federal polytechnic ilaro, Nigeria</span> -->
         <sub class="author">CDM SOFTWARES &copy;</sub></footer>
 </body>
 </html>

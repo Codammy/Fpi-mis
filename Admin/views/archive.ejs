@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Messages</title>
-    <script
-      src="https://kit.fontawesome.com/3c5dd8b0d1.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="/stylesheet/arc.css" />
-  </head>
+<%- include('./components/head.ejs') %>
   <body>
     <header>
       <div class="page-name">
-        <a href="/home">
+        <a href="/admin/home">
           <i class="fa-solid fa-arrow-left fa-lg" style="color: green"></i
         ></a>
         <h3>Archive</h3>
@@ -42,13 +31,18 @@
             </aside>
           </article>
           <aside class="action">
-          <span class="icons edit"><i class="fa-regular fa-pen-to-square" style="color: blue;"></i></span>
-          <span class="icons resend"><i class="fa-regular fa-paper-plane" style="color: green;"></i></span
-            ><span class="icons delete"><i class="fa-solid fa-trash" style="color: rgb(232, 60, 60);"></i></span>
-          </aside>
-      </div>
-      <% }) %>
-    </main>
-    <footer><small>CDM SOFTWARES</small></footer>
-  </body>
-</html>
+            <span class="icons edit"><i class="fa-regular fa-pen-to-square" style="color: blue;"></i></span>
+            <span class="icons resend"><i class="fa-regular fa-paper-plane" style="color: green;"></i></span
+              ><span class="icons delete"><i class="fa-solid fa-trash" style="color: rgb(232, 60, 60);"></i></span>
+            </aside>
+          </div>
+          <% }) %>
+        </main>
+        <footer><small>CDM SOFTWARES</small></footer>
+        <script
+          src="https://kit.fontawesome.com/3c5dd8b0d1.js"
+          crossorigin="anonymous"
+        ></script>
+      </body>
+      </html>
+      

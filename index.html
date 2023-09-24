@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FPI MIS</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="bg-image">
+        <header>
+            <nav>
+                <h3>
+                    FPI MIS
+                </h3>
+                <div class="navigate">
+                <ul>
+                    <li><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a>
+                    <span class="active"></span></li>
+                    <li><a href="#">Activate account</a></li>
+                </ul>
+                </div>
+                <span class="menu">
+               <i class="fa-solid fa-bars bars"></i>
+                </span>
+            </nav>
+        </header>
+        <section class="headline">
+            <h2>Make Informed Decisions with our MIS Platform</h2>
+        </section>
+        <section class="login">
+            <button><div class="button-effect"></div><a href="#">Admin</a></button>
+            <button><div class="button-effect"></div><a href="#">Student</a></button>
+        </section>
+        <section class="sub-headline">
+            <ul>
+                <li><i class="fa-regular fa-square-check"></i> Enhance Productivity</li>
+                <li><i class="fa-regular fa-square-check"></i> Empowering Decisions with Data</li>
+                <li><i class="fa-regular fa-square-check"></i> Real-time Data Access</li>
+                <li><i class="fa-regular fa-square-check"></i> Your Data, Your Decisions</li>
+            </ul>
+        </section>
+    </div>
+    <section class="features">
+        <div class="card">
+            <div class="icon"></div>
+            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="phrase"><ul>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+            </ul></div>
+        </div>
+        <div class="card">
+            <div class="icon"></div>
+            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="phrase"><ul>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+            </ul></div>
+        </div>
+        <div class="card">
+            <div class="icon"></div>
+            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="phrase"><ul>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+            </ul></div>
+        </div>
+        <div class="card">
+            <div class="icon"></div>
+            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="phrase"><ul>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+            </ul></div>
+        </div>
+    </section>
+    <footer></footer>
+        <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
+        <script>
+            const menu = document.querySelector(".menu")
+            const nav = document.querySelector(".navigate")
+            menu.addEventListener('click', ()=>{
+                console.log(menu, nav);
+                nav.classList.toggle('nav-out')
+                menu.children[0].classList.toggle('fa-x')
+                menu.children[0].classList.toggle('fa-bars')
+            })
+        </script>
+</body>
+</html>
