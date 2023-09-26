@@ -1,120 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3c5dd8b0d1.js"
+      crossorigin="anonymous"
+    ></script>
     <title>History</title>
     <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        header{
-            height: 9vh;
-            display: block;
-            box-shadow: 0 .8px 5px black;
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-        header .page-name{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 55px;
-        }
-        header input{
-            width: 60%;
-            padding: 13px;
-            border: 2px solid green;
-            border-radius: 4px;
-            outline: none;
-        }
-        header input:hover, header input:focus{
-            transition-duration: .5s;
-            width: 100%;
-        }
-        header input:focus{
-            transition: none;
-            outline: 3px rgb(98, 254, 8);
-            outline-style: solid;
-        }
-        .prev{
-            margin: 25px;
-        }
-        main{
-            width: 80%;
-            margin: 25px auto;
-            height: fit-content;
-        }
-        main .history{
-            position: relative;
-            width: 100%;
-            margin: 15px auto;
-            border: 1px;
-            border-radius: 5px;
-            padding: 20px;
-            box-shadow: .4px .5px 3px;
-        }
-        main .history:hover .desc, main .history:focus .desc{
-            height: auto;
-            transition: 1s;
-            opacity: 1;
-        }
-        main .history .e{
-            margin: 5px;
-        }
-        main .history .desc{
-            height: 0;
-            opacity: 0;
-        }
-        main .view{
-            position: absolute;
-            bottom: 5%;
-            right: 2%;
-        }
-        main .view a{          
-              color: green;
-              text-decoration: none;
-        }
-        main .view a:hover, i:hover{
-            cursor: pointer;
-            text-shadow: .5px .5px 15px green;          
-        }
-        footer{
-            width: 100%;
-            position: absolute;
-            bottom: 0%;
-            text-align: center;
-            padding: 10px;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      header {
+        height: 9vh;
+        display: block;
+        box-shadow: 0 0.8px 5px black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+      header .page-name {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 55px;
+      }
+      header input {
+        width: 60%;
+        padding: 13px;
+        border: 2px solid green;
+        border-radius: 4px;
+        outline: none;
+      }
+      header input:hover,
+      header input:focus {
+        transition-duration: 0.5s;
+        width: 100%;
+      }
+      header input:focus {
+        transition: none;
+        outline: 3px rgb(98, 254, 8);
+        outline-style: solid;
+      }
+      .prev {
+        margin: 25px;
+      }
+      main {
+        width: 80%;
+        margin: 25px auto;
+        height: fit-content;
+      }
+      main .history {
+        position: relative;
+        width: 100%;
+        margin: 15px auto;
+        border: 1px;
+        border-radius: 5px;
+        padding: 20px;
+        box-shadow: 0.4px 0.5px 3px;
+      }
+      main .history:hover .desc,
+      main .history:focus .desc {
+        height: auto;
+        transition: 1s;
+        opacity: 1;
+      }
+      main .history .e {
+        margin: 5px;
+      }
+      main .history .desc {
+        height: 0;
+        opacity: 0;
+      }
+      main .view {
+        position: absolute;
+        bottom: 5%;
+        right: 2%;
+      }
+      main .view a {
+        color: green;
+        text-decoration: none;
+      }
+      main .view a:hover,
+      i:hover {
+        cursor: pointer;
+        text-shadow: 0.5px 0.5px 15px green;
+      }
+      footer {
+        width: 100%;
+        position: absolute;
+        bottom: 0%;
+        text-align: center;
+        padding: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="prev">
-            <a href="/admin/home">
-            <i class="fa-solid fa-arrow-left fa-lg" style="color: green;"></i></a>
-        </div>
-        <div class="page-name">
-            <h3>History</h3></div>
-        <div class="search">
-            <input type="search">
-        </div>
+      <div class="prev">
+        <a href="/admin/home">
+          <i class="fa-solid fa-arrow-left fa-lg" style="color: green"></i
+        ></a>
+      </div>
+      <div class="page-name">
+        <h3>History</h3>
+      </div>
+      <div class="search">
+        <input type="search" />
+      </div>
     </header>
     <main>
-    <% data.forEach(function(dt) {%>
-        <div class="history">
-            <div class="date e"><b> Date:</b> <span><%= dt.date.dt %></span></div>
-            <div class="time e"><b> Time:</b> <span><%= dt.date.time %></span></div>
-            <div class="desc e"><b> Title:</b> <span><%= dt.title %></span>
-            </div>
-            <span class="view"><a href="#">View</a></span>
-        </div>
-        <% })%>
+      <% data.forEach(function(dt) {%>
+      <div class="history">
+        <div class="date e"><b> Date:</b> <span><%= dt.date.dt %></span></div>
+        <div class="time e"><b> Time:</b> <span><%= dt.date.time %></span></div>
+        <div class="desc e"><b> Title:</b> <span><%= dt.title %></span></div>
+        <span class="view"><a href="#">View</a></span>
+      </div>
+      <% })%>
     </main>
     <footer>CDM SOFTWARES</footer>
-</body>
+  </body>
 </html>

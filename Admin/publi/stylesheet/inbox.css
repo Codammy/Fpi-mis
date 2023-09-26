@@ -1,13 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-:root{
-    --main-color: rgb(6, 235, 29);
-    --primary-color: #f0e260;
-    --secondary-color: rgb(2, 30, 2);
-}
 .fa-arrow-left{
     padding: 20px;
     color: var(--secondary-color);
@@ -45,48 +35,89 @@ header .page-name{
 }
 
 main {
-    margin: 40px auto;
-    width: 91%;
+    margin: 20px auto;
     height: fit-content;
 }
 .each{
-    width: 100%;
+    width: 91%;
     height: fit-content;
     border-top: 3px solid whitesmoke;
     border-bottom: 3px solid whitesmoke;
+    margin: auto;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .each:hover{
-    width: 100%;
-    height: fit-content;
     border-top: 3px solid white;
     border-bottom: 3px solid white;
     background-color: whitesmoke;
 }
-.each .contain{
-    padding: 15px;
-    margin: auto;
-}
 .each .sender{
-    margin: 5px;
+    /* margin: auto 5px; */
 }
 .each .sender .name{
+    margin: 5px;
     text-transform: capitalize;
-    font-weight: 600;
 }
 
-.each .title{
+.each .sender .matric-no{
     margin: 5px;
-    text-transform: uppercase;
-    font-weight: 800;
-}
-.each .matric-no{
-    text-transform: uppercase;
     font-size: 17px;
+    text-transform: uppercase;
+}
+.each .title{
+    font-size: 14px;
     font-weight: 600;
+    margin: 5px;
+    font-style: italic;
 }
 .each .body{
+    display: flex;
     margin: 5px;
+}
+.sub-title{
+    font-weight: 600;
+    font-size: 15px;
+    margin: auto 10px;
+    color: green;
+    font-family: cursive;
+    text-transform: uppercase;
+}
+.each .body p{
+    font-size: 14px;
+    display: flex;
+    font-style: italic;
 }
 .each .action{
     margin-left: 97%;
+    position: relative;
+}
+.each .action:hover .take-action, .each .action:focus .take-action{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    height: 65px;
+    border-radius: 5px;
+    box-shadow: .5px .5px 1px 0 black;
+    right: 10%;
+    background-color: white;
+}
+.each .take-action span{
+    width: 100%;
+    height: 50%;
+    margin-block: 2px;
+    text-align: center;
+    cursor: pointer;
+}
+.each .take-action span:hover{
+    background-color: whitesmoke;
+}
+.each .take-action{
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    .each{
+        width: 100%;
+        height: 150px;
+    }
 }

@@ -1,72 +1,119 @@
-<%- include('./components/head.ejs') %>
-<body>
-     <header>
-        <nav>
-            <h3>
-                FPI MIS
-            </h3>
-            <ul>
-                <li><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a></li>
-                <li><a href="/student/login"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-            </ul>
-        </nav>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head.ejs') %>
+  <body>
+    <header>
+      <nav>
+        <h3>FPI MIS</h3>
+        <ul>
+          <li>
+            <a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a>
+          </li>
+          <li>
+            <a href="/student/login"
+              ><i class="fa-solid fa-right-from-bracket"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section class="aside">
-            <% const names = user.name.split(" ") %>
-		<h2 class="greeting">Good afternoon <%= names[1] %>, </h2>
-            <i class="fa-solid fa-bell fa-1xl" style="color: #43c71f;"></i>        </section>
-        <section class="user-info">
-		<div class="user-profile item">
-			<% if (user.img.length) { %>
-			<img src= "<%= user.img %>" alt="<%= user.name %>">
-			<% } else {%>
-				<span> No photo </ span>
-			<% } %>
-		</ div>
-	    <div class="user-id item"><h3><%= user.matric_no %></h3></div>
+      <section class="aside">
+        <% const names = user.name.split(" ") %>
+        <h2 class="greeting">Good afternoon <%= names[1] %>,</h2>
+        <i
+          class="fa-solid fa-bell fa-1xl"
+          style="color: #43c71f; cursor: pointer"
+        ></i>
+      </section>
+      <section class="user-info">
+        <div class="user-profile item">
+          <% if (user.img.length) { %>
+          <img src="<%= user.img %>" alt="<%= user.name %>" />
+          <% } else {%>
+          <span> No photo </span>
+          <% } %>
+        </div>
+        <div class="user-id item"><h3><%= user.matric_no %></h3></div>
+      </section>
+      <section class="item notifications">
+        <p>You have <b>5</b> new notifications</p>
+      </section>
+    </main>
+    <section class="problem-lg">
+      <b>?</b>
     </section>
-    <section class="item notifications"><p>You have <b>5</b> new notifications </p></section>
-</main>
-<section class="problem-lg">            
-    <b>?</b>
-</section>
-<section class="hide">
-    <form action="#" class=" cmp form-style">
+    <section class="hide">
+      <form action="#" class="cmp form-style">
         <h3>Make a complain</h3>
         <div class="title">
-            <label for="title">Title: </label>
-            <input type="text" name="title" id="title">
+          <label for="title">Title: </label>
+          <input type="text" name="title" id="title" />
         </div>
         <div class="body">
-            <label for="body">Body: </label>
-            <textarea name="body" id="body" rows="5"></textarea>
-            <button type="submit">Send</button>
+          <label for="body">Body: </label>
+          <textarea name="body" id="body" rows="5"></textarea>
+          <button type="submit">Send</button>
         </div>
-    </form>
-</section>
-<script>
-    const complain = document.querySelector('.problem-lg');
-    const makeComplain = document.querySelector('.hide');
-    const form = makeComplain.children[0]
-    let condition = true
-    function occur (c){
+      </form>
+    </section>
+    <section class="ntc">
+      <div class="cover">
+        <article class="zero-height drop-down-notification">
+          <% let i = 5 %> <% while (i > 0) {%>
+          <section class="eachN">
+            <p class="text">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Voluptatem enim consequatur quibusdam at autem adipisci fugit
+              deleniti repellendus repudiandae nomoi...
+            </p>
+          </section>
+          <% i-- %> <% } %>
+          <p href="#" class="view-clear clear">Clear all</p>
+          <a href="/student/messages/#" class="view-clear view">View all</a>
+        </article>
+      </div>
+      <i class="fa-solid fa-xmark"></i>
+    </section>
+    <script>
+      const complain = document.querySelector(".problem-lg");
+      const makeComplain = document.querySelector(".hide");
+      const form = makeComplain.children[0];
+      let condition = true;
+      function occur(c) {
         console.log(c);
-        if (c)
-        {
-        makeComplain.className = 'make-complain'
-        form.classList.remove('cmp')
+        if (c) {
+          makeComplain.className = "make-complain";
+          form.classList.remove("cmp");
+        } else {
+          makeComplain.className = "hide";
+          form.classList.add("cmp");
         }
-        else {
-            makeComplain.className = 'hide'
-            form.classList.add('cmp')
-        }
-        return !c
-    }
-    complain.addEventListener('click', ()=>{
-        condition = occur(condition)
-        });
-</script>
-    <script defer src="/javascripts/view.js"></script>
-</body>
+        return !c;
+      }
+      complain.addEventListener("click", () => {
+        condition = occur(condition);
+      });
+
+      const blackCover = document.querySelector(".cover");
+      const ntc = document.querySelector(".drop-down-notification");
+      const bell = document.querySelector(".fa-bell");
+
+      bell.addEventListener("click", () => {
+        blackCover.classList.add("black-cover");
+        ntc.classList.add("max-height");
+        blackCover.classList.remove("zero-height");
+        ntc.firstElementChild.style.display = "block";
+        bell.classList.replace("fa-bell", "fa-xmark");
+      });
+      const cancleNtc = document.querySelector(".fa-xmark");
+      cancleNtc.addEventListener("click", () => {
+        blackCover.classList.remove("black-cover");
+        blackCover.classList.remove("max-height");
+        blackCover.classList.add("zero-height");
+        ntc.firstElementChild.style.display = "none";
+        bell.classList.replace("fa-xmark", "fa-bell");
+      });
+    </script>
+  </body>
 </html>

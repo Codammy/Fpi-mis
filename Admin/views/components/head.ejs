@@ -1,10 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin <%= page.title %></title>
     <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
-    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="<%= page.style %>" />
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: green;
+    --primary-color: #f0e260;
+}
+a {
+    color: initial;
+}
+body {
+    max-width: 100%;
+    max-height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+    </style>
   </head>

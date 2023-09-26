@@ -1,68 +1,39 @@
-<%- include('./components/head.ejs') %>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head.ejs') %>
+  <body>
     <header>
-        <div class="page-name">
-          <a href="/admin/home">
-            <i class="fa-solid fa-arrow-left fa-lg" style="color: green"></i
-          ></a>
-          <h3>Complaint Box</h3>
-        </div>
-      </header>
-      <main>
-        <section class="each">
-          <div class="contain">
+      <div class="page-name">
+        <a href="/admin/home">
+          <i class="fa-solid fa-arrow-left fa-lg" style="color: green"></i
+        ></a>
+        <h3>Complaint Box</h3>
+      </div>
+    </header>
+    <main>
+      <% for (let i = 0; i < 5; i++) { %>
+      <section class="each">
           <aside class="sender">
-            <span class="name">adebowale samuel victor</span><br>
-            <span class="matric-no">n/ac/21/6589</span>
+            <span class="name"><span class="sub-title">Sender-name:</span>adebowale samuel victor</span><br />
+            <span class="matric-no"><span class="sub-title">Matric-no:</span>n/ac/21/6589</span>
           </aside>
-          <aside class="title">well being of student on campus</aside>
-          <aside class="body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum officia natus vero consequatur dolores ab tempore consectetur ducimus. Neque, quisquam?</aside>
+          <aside class="title"><span class="sub-title">Title:</span>well being of student on campus</aside>
+          <aside class="body"><span class="sub-title">Body:</span><p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
+            officia natus vero consequatur dolores ab tempore consectetur
+            ducimus. Neque, quisquam?</p>
+          </aside>
           <aside class="action">
-            <span class="read">
+            <div style="transform: rotate(90deg);" class="menu"><i>•</i><i>•</i><i>•</i></i></div>
+            <div class="take-action">
+            <span class="read" style="color: green;">Read</span>
+            <span class="delete" style="color: red;">
+              Delete
             </span>
-            <span class="delete">
-              <i class="fa-solid fa-trash fa-lg"></i
-                >
-            </span>
+          </div>
           </aside>
-        </div>
-        </section>
-        <section class="each">
-          <div class="contain">
-          <aside class="sender">
-            <span class="name">adebowale samuel victor</span><br>
-            <span class="matric-no">n/ac/21/6589</span>
-          </aside>
-          <aside class="title">well being of student on campus</aside>
-          <aside class="body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum officia natus vero consequatur dolores ab tempore consectetur ducimus. Neque, quisquam?</aside>
-          <aside class="action">
-            <span class="read">
-            </span>
-            <span class="delete">
-              <i class="fa-solid fa-trash fa-lg"></i
-                >
-            </span>
-          </aside>
-        </div>
-        </section>
-        <section class="each">
-          <div class="contain">
-          <aside class="sender">
-            <span class="name">adebowale samuel victor</span><br>
-            <span class="matric-no">n/ac/21/6589</span>
-          </aside>
-          <aside class="title">well being of student on campus</aside>
-          <aside class="body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum officia natus vero consequatur dolores ab tempore consectetur ducimus. Neque, quisquam?</aside>
-          <aside class="action">
-            <span class="read">
-            </span>
-            <span class="delete">
-              <i class="fa-solid fa-trash fa-lg"></i
-                >
-            </span>
-          </aside>
-        </div>
-        </section>
-      </main>
-</body>
+      </section>
+   <% } %>
+    </main>
+  </body>
 </html>

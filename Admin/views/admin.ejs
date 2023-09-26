@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <%- include('./components/head.ejs') %>
 <body>
      <header>
@@ -11,18 +13,16 @@
         </nav>
     </header>
     <div class="section">
-    <span class="complaint-box"><a href="/admin/complaint-box"><i class="fa-solid fa-box-open fa-xl" title="Complaint-box" style="color: rgb(17, 230, 17);"></i></a></span>
+    <span class="complaint-box"><a href="/admin/complaint-box"><i class="fa-solid fa-box-open fa-xl navigate" title="Complaint-box"></i></a></span>
     <span class="history"><a href="/admin/history">View history</a></span>
 </div>
 <a href="/admin/create-new">
     <article title="create-new">
-        <!-- <i class="fa-solid fa-wand-magic-sparkles fa-2xl"></i> -->
         <i class="fa-solid fa-plus fa-2xl
         "></i>
     </article>
 </a>
-<div class="drafts"><a href="/admin/archive" title="Drafts"><i class="fa-solid fa-box-archive fa-xl" style="color: rgb(17, 230, 17);"></i></a></div>
-    <footer>
-        <sub class="author">CDM SOFTWARES &copy;</sub></footer>
+<div class="drafts"><a href="/admin/archive" title="Drafts"><i class="fa-solid fa-box-archive fa-xl navigate"></i></a></div>
+    <footer><sub class="author">CDM SOFTWARES &copy;</sub></footer>
 </body>
 </html>

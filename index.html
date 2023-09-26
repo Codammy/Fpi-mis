@@ -18,9 +18,9 @@
                 </h3>
                 <div class="navigate">
                 <ul>
-                    <li><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a>
+                    <li id="active"><a href="https://federalpolyilaro.edu.ng/" target="_blank"> Home</a>
                     <span class="active"></span></li>
-                    <li><a href="#">Activate account</a></li>
+                    <li><a href="/student/login">Activate account</a></li>
                 </ul>
                 </div>
                 <span class="menu">
@@ -32,8 +32,8 @@
             <h2>Make Informed Decisions with our MIS Platform</h2>
         </section>
         <section class="login">
-            <button><div class="button-effect"></div><a href="#">Admin</a></button>
-            <button><div class="button-effect"></div><a href="#">Student</a></button>
+            <button><div class="button-effect"></div><a href="/admin/">Admin</a></button>
+            <button><div class="button-effect"></div><a href="/student/login">Student</a></button>
         </section>
         <section class="sub-headline">
             <ul>
@@ -44,41 +44,62 @@
             </ul>
         </section>
     </div>
+    <section class="contain-f">
+        <div class="features-headline">
+            <span class="feature-design"></span><span class="headtext">Features</span><span class="feature-design"></span>
+        </div>
     <section class="features">
         <div class="card">
-            <div class="icon"></div>
-            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="icon"><img src="/images/system-info.png" alt=""></div>
+            <div class="headtext"><span class="dash-design"></span><p>Swift and effortless information retrieval</p></div>
             <div class="phrase"><ul>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Seamless access to vital school updates, memos, and documents.</li>
+                <li>Streamlined navigation for students to swiftly find what they need.</li>
             </ul></div>
         </div>
         <div class="card">
-            <div class="icon"></div>
-            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="icon"><img src="/images/system-info.png" alt=""></div>
+            <div class="headtext"><span class="dash-design"></span><p>Accurate and reliable information</p></div>
             <div class="phrase"><ul>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Ensuring that all information provided is accurate and up-to-date.</li>
+                <li>Validating the authenticity of the data to maintain trustworthiness.</li>
             </ul></div>
         </div>
         <div class="card">
-            <div class="icon"></div>
-            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="icon"><img src="/images/system-info.png" alt=""></div>
+            <div class="headtext"><span class="dash-design"></span><p>Interactive complaint system</p></div>
             <div class="phrase"><ul>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Empowering students to voice their concerns through a user-friendly complaint interface.</li>
+                <li>Allowing school administrators to efficiently address and track student grievances.</li>
             </ul></div>
         </div>
         <div class="card">
-            <div class="icon"></div>
-            <div class="headtext"><span class="dash-design"></span><p>Headline of topic</p></div>
+            <div class="icon"><img src="/images/system-info.png" alt=""></div>
+            <div class="headtext"><span class="dash-design"></span><p>Efficient information administration</p></div>
             <div class="phrase"><ul>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
-                <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio, numquam?</li>
+                <li>Centralized management of school data, memos, and documents.</li>
+                <li>User-friendly tools for administrators to organize, update, and disseminate information effectively.</li>
             </ul></div>
         </div>
+        </section>
     </section>
-    <footer></footer>
+    <footer>
+            <section class="footer-nav">
+                <ul>
+                <li><a href="/admin">Login as Admin</a></li>
+                <li><a href="/student/login">Student</a></li>
+                <li><a href="/student/login">Activate account</a></li>
+            </ul>
+            </section>
+            <section class="contact">
+                <ul><li class="gmail"><a href="#"></a></li>
+                <li class="twitter"><a href="#"></a></li>
+                <li class="github"><a href="https://github.com/Codammy"></a></li></ul>
+            </section>
+                <section class="copyright">
+                    <span> CDM SOFTWARES </span> 
+                Student Management information system 2023 &copy;</section>
+    </footer>
         <script src="https://kit.fontawesome.com/3c5dd8b0d1.js" crossorigin="anonymous"></script>
         <script>
             const menu = document.querySelector(".menu")

@@ -1,39 +1,47 @@
-<%- include('./components/head.ejs') %>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head.ejs') %>
+  <body>
     <header>
-        <nav>
-            <h3>
-                FPI MIS
-            </h3>
-        </nav>
+      <nav>
+        <h3>FPI MIS</h3>
+      </nav>
     </header>
     <form action="/new" method="post">
-    <div class="format">
+      <div class="format">
         <select name="doctype" id="select">
-            <option value="" class="select-case" selected disabled>Select message format</option>
-            <option value="txt"  class="select-case"><span class="txt">Text only</span></option>
-            <option value="img" class="select-case"><span>Image</span></option>
-            <option value="docx" class="select-case"><span>Document</span></option>
-            <option value="txt-img" class="select-case"><span>Text + Image</span></option>
+          <option value="" class="select-case" selected disabled>
+            Select message format
+          </option>
+          <option value="txt" class="select-case">
+            <span class="txt">Text only</span>
+          </option>
+          <option value="img" class="select-case"><span>Image</span></option>
+          <option value="docx" class="select-case">
+            <span>Document</span>
+          </option>
+          <option value="txt-img" class="select-case">
+            <span>Text + Image</span>
+          </option>
         </select>
         <div class="hide-tmp">
-            <div class="contain">
-                <i class="fa-solid fa-xmark" style="display: none;"></i>
+          <div class="contain">
+            <i class="fa-solid fa-xmark" style="display: none"></i>
             <label for="file" class="decorate-p"></label>
-            <input type="file" class="" id="file" name="file">
+            <input type="file" class="" id="file" name="file" />
+          </div>
         </div>
-        </div>
-    </div>
-    <div class="hide" id="include_hf">
+      </div>
+      <div class="hide" id="include_hf">
         <label for="header">Include header</label>
-        <input id="header" type="checkbox">
+        <input id="header" type="checkbox" />
         <label for="footer">Include footer</label>
-        <input id="footer" type="checkbox">
-    </div>
-    <button type="submit" id="submit" class="button">Upload</button>
-    <button type="submit" id="write" class="hide">Start writing</button>
-</form>
-<%- include("./components/write.ejs") %>
-<script defer src="/javascripts/writeFormat.js"></script>
-</body>
+        <input id="footer" type="checkbox" />
+      </div>
+      <button type="submit" id="submit" class="button">Upload</button>
+      <button type="submit" id="write" class="hide">Start writing</button>
+    </form>
+    <%- include("./components/write.ejs") %>
+    <script defer src="/javascripts/writeFormat.js"></script>
+  </body>
 </html>

@@ -1,37 +1,37 @@
-<%- include('./components/head.ejs') %>
-<body>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head.ejs') %>
+  <body>
     <header>
-        <div class="image">
-            <img src="/images/user3.png" alt="">
-        </div>
-        <nav>Admin - 1</nav>
+      <div class="image">
+        <img src="/images/user3.png" alt="" />
+      </div>
+      <nav>Admin - 1</nav>
     </header>
     <main class="page">
-        <a href="/student/dashboard">
+      <a href="/student/dashboard">
         <i class="fa-solid fa-arrow-left fa-lg"></i>
-        </a>
-        <% data.forEach(function(msg) {%>
-            <article class="message">
-                <aside class="user">
-                    <small>--- Admin 7 ---</small>
-                </aside>
-                <section class="main">
-                    <% if (msg.img) { %>
-                    <img src="<%= msg.img %>" alt="">
-                    <% } %>
-                    <% if (msg.body.length) { %>
-                        <p><%= msg.body %></p>
-                    <% } %>
-                    <% if (msg.type == 'doc') { %>
-                        <p><%= msg.doc %></p>
-                    <% } %>
-                </section>
-                <aside class="time">
-                    <small>19:45</small>
-                </aside>
-            </article>
-            <% })%>
-            </main>
+      </a>
+      <% data.forEach(function(msg) {%>
+      <article class="message">
+        <aside class="user">
+          <small>--- Admin 7 ---</small>
+        </aside>
+        <section class="main">
+          <% if (msg.img) { %>
+          <img src="<%= msg.img %>" alt="" />
+          <% } %> <% if (msg.body.length) { %>
+          <p><%= msg.body %></p>
+          <% } %> <% if (msg.type == 'doc') { %>
+          <p><%= msg.doc %></p>
+          <% } %>
+        </section>
+        <aside class="time">
+          <small>19:45</small>
+        </aside>
+      </article>
+      <% })%>
+    </main>
     <footer><small>Only Admins can send message</small></footer>
-</body>
+  </body>
 </html>

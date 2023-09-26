@@ -1,4 +1,4 @@
-.ntc {
+.black-cover {
   position: fixed;
   top: 0;
   height: 100%;
@@ -6,13 +6,12 @@
   background-color: rgba(0, 0, 0, 0.4);
 }
 .zero-height{
-  height: 0;
+  top: -100%;
+  transition: .2s;
 }
 .drop-down-notification {
-  transition-timing-function: ease-in;
   background: white;
   position: relative;
-  transform: translateY(-75%);
   width: fit-content;
   margin: 50px auto;
   border-radius: 5px;
@@ -20,9 +19,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation-name: ht;
-  animation-duration: .5s;
-  animation-fill-mode: forwards;
+}
+.max-height{
+  top: 0%;
+  transition: .5s;
 }
 .eachN {
     background: #f0e260;
@@ -30,18 +30,9 @@
     padding: 6px;
     margin: 10px;
     border-radius: 5px;
+    display: none;
 }
-@keyframes ht {
-  0%{
-    transform: translateY(-100%);
-  }
-  50%{
-    transform: translateY(-50%);
-  }
-  100%{
-    transform: translateY(0%);
-  }
-}
+
 .view-clear {
   position: absolute;
   bottom: -5vh;

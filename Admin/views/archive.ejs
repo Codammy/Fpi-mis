@@ -1,4 +1,6 @@
-<%- include('./components/head.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('./components/head.ejs') %>
   <body>
     <header>
       <div class="page-name">
@@ -11,38 +13,41 @@
     <main class="page">
       <% data.archives.forEach(drafts => { %>
       <div class="contain">
-          <article class="message">
-            <aside class="user">
-              <small>--- Admin 7 ---</small>
-            </aside>
-            <section class="main">
-              <% if (drafts.img) { %>
-                <img src="<%= drafts.img %>" alt="" />
-              <% } %>
-              <% if (drafts.body.length) { %>
-               <p><%= drafts.body %></p>
-              <% } %>
-              <% if (drafts.type == 'doc') { %>
-               <%= drafts.doc%>
-              <% } %>
-            </section>
-            <aside class="time">
-              <small>19:45</small>
-            </aside>
-          </article>
-          <aside class="action">
-            <span class="icons edit"><i class="fa-regular fa-pen-to-square" style="color: blue;"></i></span>
-            <span class="icons resend"><i class="fa-regular fa-paper-plane" style="color: green;"></i></span
-              ><span class="icons delete"><i class="fa-solid fa-trash" style="color: rgb(232, 60, 60);"></i></span>
-            </aside>
-          </div>
-          <% }) %>
-        </main>
-        <footer><small>CDM SOFTWARES</small></footer>
-        <script
-          src="https://kit.fontawesome.com/3c5dd8b0d1.js"
-          crossorigin="anonymous"
-        ></script>
-      </body>
-      </html>
-      
+        <article class="message">
+          <aside class="user">
+            <small>--- Admin 7 ---</small>
+          </aside>
+          <section class="main">
+            <% if (drafts.img) { %>
+            <img src="<%= drafts.img %>" alt="" />
+            <% } %> <% if (drafts.body.length) { %>
+            <p><%= drafts.body %></p>
+            <% } %> <% if (drafts.type == 'doc') { %> <%= drafts.doc%> <% } %>
+          </section>
+          <aside class="time">
+            <small>19:45</small>
+          </aside>
+        </article>
+        <aside class="action">
+          <span class="icons edit"
+            ><i class="fa-regular fa-pen-to-square" style="color: blue"></i
+          ></span>
+          <span class="icons resend"
+            ><i
+              class="fa-regular fa-paper-plane"
+              style="color: green"
+            ></i></span
+          ><span class="icons delete"
+            ><i class="fa-solid fa-trash" style="color: rgb(232, 60, 60)"></i
+          ></span>
+        </aside>
+      </div>
+      <% }) %>
+    </main>
+    <footer><small>CDM SOFTWARES</small></footer>
+    <script
+      src="https://kit.fontawesome.com/3c5dd8b0d1.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
