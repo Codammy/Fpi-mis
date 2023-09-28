@@ -31,7 +31,7 @@ student.get('/student/dashboard', (req, res)=>{
         }
     })
 })
-student.get('/login', (req, res)=>{
+student.get('/student', (req, res)=>{
     res.redirect('/student/login')
 })
 module.exports = student

@@ -39,7 +39,7 @@ main{
     width: 90%;
     color: white;
     height: fit-content;
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
 }
 .contain{
     position: relative;

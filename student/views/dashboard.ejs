@@ -61,19 +61,21 @@
       <div class="cover">
         <article class="zero-height drop-down-notification">
           <% let i = 5 %> <% while (i > 0) {%>
-          <section class="eachN">
+	  <a href="#" class="eachN">
+          <section>
             <p class="text">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit.
               Voluptatem enim consequatur quibusdam at autem adipisci fugit
               deleniti repellendus repudiandae nomoi...
             </p>
           </section>
+	  </a>
           <% i-- %> <% } %>
           <p href="#" class="view-clear clear">Clear all</p>
           <a href="/student/messages/#" class="view-clear view">View all</a>
         </article>
       </div>
-      <i class="fa-solid fa-xmark"></i>
+      <i class="fa-solid cancel"></i>
     </section>
     <script>
       const complain = document.querySelector(".problem-lg");
@@ -98,21 +100,23 @@
       const blackCover = document.querySelector(".cover");
       const ntc = document.querySelector(".drop-down-notification");
       const bell = document.querySelector(".fa-bell");
-
-      bell.addEventListener("click", () => {
+      const cancleNtc = document.querySelector(".cancel");
+      bell.addEventListener("click", (e) => {	
         blackCover.classList.add("black-cover");
         ntc.classList.add("max-height");
         blackCover.classList.remove("zero-height");
         ntc.firstElementChild.style.display = "block";
-        bell.classList.replace("fa-bell", "fa-xmark");
+        cancelNtc.classList.add("fa-xmark");
       });
-      const cancleNtc = document.querySelector(".fa-xmark");
-      cancleNtc.addEventListener("click", () => {
+      ntc.addEventListener('click', (e)=>{
+	      e.stopPropagation()
+      })
+      blackCover.addEventListener("click", () => {
         blackCover.classList.remove("black-cover");
         blackCover.classList.remove("max-height");
         blackCover.classList.add("zero-height");
         ntc.firstElementChild.style.display = "none";
-        bell.classList.replace("fa-xmark", "fa-bell");
+        bell.classList.remove("fa-xmark");
       });
     </script>
   </body>

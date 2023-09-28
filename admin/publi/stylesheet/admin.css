@@ -66,7 +66,7 @@ article:hover .fa-plus {
   color: rgb(17, 230, 17);
 }
 .navigate:hover,
-.navigate:hover {
+.navigate:focus {
   color: green;
 }
 .section {
