@@ -1,3 +1,7 @@
+:root {
+    --main-color: green;
+    --primary-color: #f0e260;
+}
 form{
     margin: 50px auto;
     height: fit-content;

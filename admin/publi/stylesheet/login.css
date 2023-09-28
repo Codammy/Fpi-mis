@@ -1,3 +1,7 @@
+:root {
+    --main-color: green;
+    --primary-color: #f0e260;
+}
 nav {
     display: flex;
     justify-content: space-between;

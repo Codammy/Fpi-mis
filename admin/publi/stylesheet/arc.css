@@ -1,6 +1,6 @@
 .fa-arrow-left{
     padding: 20px;
-    color: var(--secondary-color);
+    color: var(--main-color);
 }
 img{
     width: 95%;
@@ -39,7 +39,7 @@ main{
     width: 90%;
     color: white;
     height: fit-content;
-    background-color: var(--secondary-color);
+    background-color: var(--main-color);
 }
 .contain{
     position: relative;
@@ -48,17 +48,17 @@ main{
     display: none;
 }
 .contain:hover .action, .contain:focus .action{
-        display: block;
-        border-radius: 5px;
-        bottom: 15%;
-        right: 10%;
-        position: absolute;
-        width: 250px;
-        background-color: azure;
-        padding: 5px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    display: block;
+    border-radius: 5px;
+    bottom: 15%;
+    right: 10%;
+    position: absolute;
+    width: 250px;
+    background-color: azure;
+    padding: 5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .action .icons{
     text-align: center;
