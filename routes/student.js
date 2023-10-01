@@ -1,12 +1,15 @@
 const fs = require('fs')
 const express = require('express')
-const student = express.Router()
+const studentRoute = express.Router()
+const memo = require('../models/memo')
+const student = require('../models/student')
+const complain = require('../models/complain')
 
-// Student route
-student.get('/student/login', (req, res)=>{    
+// Student get requests
+studentRoute.get('/login', (req, res)=>{    
     res.render('student/views/login', {page: {title: '', style: '/stylesheets/login.css'}})
 })
-student.get('/student/messages', (req, res)=>{
+studentRoute.get('/messages', (req, res)=>{
     fs.readFile('./local-db/posts.json', (err, data)=>{
         if (err)
             console.log(err)
@@ -16,7 +19,7 @@ student.get('/student/messages', (req, res)=>{
         }
     })
 })
-student.get('/student/dashboard', (req, res)=>{
+studentRoute.get('/dashboard', (req, res)=>{
     console.log(req.url, req.method, res.statusCode)
     fs.readFile('./local-db/students.json', (err, data)=>{
         if (err)
@@ -31,7 +34,17 @@ student.get('/student/dashboard', (req, res)=>{
         }
     })
 })
-student.get('/student', (req, res)=>{
+studentRoute.get('/', (req, res)=>{
     res.redirect('/student/login')
 })
-module.exports = student
+
+// handling post request
+studentRoute.post('/login', (req, res)=>{res.render('student/views/dashboard')})
+
+studentRoute.post('/complain', async (req, res)=>{
+	console.log(req.body)
+	const result = await complain.create(req.body)
+	res.redirect('/student/dashboard')
+})
+
+module.exports = studentRoute

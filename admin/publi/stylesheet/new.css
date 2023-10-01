@@ -2,10 +2,16 @@
     --main-color: green;
     --primary-color: #f0e260;
 }
+body{background: whitesmoke;}
 form{
     margin: 50px auto;
     height: fit-content;
     width: 600px;
+}
+.text-form{
+	width: 100%;
+	margin: auto;
+	height: 100%:
 }
 .format{
 }
@@ -23,7 +29,8 @@ header nav{
     padding: 5px;
     display: flex;
     margin: auto 45px;
-    background-color: #f0e260;
+   /* background-color: #f0e260;*/
+    background-color: #98FF98;
     width: fit-content;
     border-radius: 3px;
     height: 5vh;
@@ -111,19 +118,15 @@ input[type='file']{
     outline-style: solid;
 }
 .write{
-    background-color: white;
-    top: 0%;
-    transition: .5s;
     width: 100%;
     height: 100%;
-    position: absolute;
 }
 .write article{
     margin: 25px auto;
     width: 85%;
 }
 .write article input{
-    background-color: white;
+    background-color: inherit;
     padding: 10px;
     color: black;
     border-top: none;
@@ -136,7 +139,8 @@ input[type='file']{
 }
 .write article textarea{
     margin: 45px auto;
-    background-color: white;    border-bottom: 1px thin black;
+    background-color: inherit;
+    border-bottom: 1px thin black;
     outline: none;
     color: black;
     border-top: none;
@@ -148,10 +152,17 @@ input[type='file']{
     font-size: 20px;
     padding: 10px;
     width: 100%;
+    height: 100%;
 }
-
 @media screen and (max-width: 800px) {
-    form{
+form{
         width: 300px;
     }
+    .text-form{
+    }
+.write article input{
+	font-size: 20px;
+}.write article textarea{
+	font-size: 18px;
+}
 }

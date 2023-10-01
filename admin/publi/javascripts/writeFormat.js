@@ -2,12 +2,11 @@ const form = document.getElementById('form')
 const select = document.getElementById('select')
 const file = document.getElementsByTagName('input')[0]
 const hfStatus = document.getElementById('include_hf')
-const textarea = document.getElementById('textarea')
+//const textarea = document.getElementById('textarea')
 const btn = document.getElementById('submit')
 const btn2 = document.getElementById('write')
 const cancel = document.getElementsByClassName('fa-xmark')[0]
 const contain = document.getElementsByClassName('contain')[0]
-const writeMode = document.getElementsByClassName('w+')[0]
 
 select.addEventListener('change', () => {
     switch (select.value) {
@@ -41,7 +40,8 @@ select.addEventListener('change', () => {
             {
                 file.previousElementSibling.className = 'hide'
                 contain.innerHTML += 
-                `<i class="fa-solid fa-file fa-2xl"></i>`
+                `<i class="fa-solid fa-file fa-2xl"></i>
+		<small>${file.files.name}</small>`
                 cancel.classList.remove('hide')
             }
         }
@@ -72,12 +72,13 @@ cancel.addEventListener('click', ()=>{
     cancel.style.display = 'none'
 })
 btn2.addEventListener('click', (e)=>{
-    e.preventDefault()
-    console.log(writeMode);
-    writeMode.className = 'write'
-    writing()
+	e.preventDefault()
+    window.location.href = '/admin/new'
+   // console.log(writeMode);
+    //writeMode.className = 'write'
+    //writing()
 })
-function writing() {
+/*function writing() {
     const title = document.getElementsByClassName('title')[0]
     const body = document.getElementsByTagName('textarea')[0]
     //const send = document.getElementById('send')
@@ -86,4 +87,4 @@ function writing() {
     title.className = 'title'
     body.className = 'body'
     //send.className = 'button'
-}
+}*/

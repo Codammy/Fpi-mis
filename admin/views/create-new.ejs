@@ -7,7 +7,7 @@
         <h3>FPI MIS</h3>
       </nav>
     </header>
-    <form action="/new" method="post">
+    <form action="/new" method="post" class="">
       <div class="format">
         <select name="doctype" id="select">
           <option value="" class="select-case" selected disabled>
@@ -41,7 +41,6 @@
       <button type="submit" id="submit" class="button">Upload</button>
       <button type="submit" id="write" class="hide">Start writing</button>
     </form>
-    <%- include("./components/write.ejs") %>
     <script defer src="/javascripts/writeFormat.js"></script>
   </body>
 </html>

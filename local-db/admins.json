@@ -1,36 +1,35 @@
 {
 	"Admins": [
 		{
-			"id": 1,
 			"name": "Rector",
 			"id_no": "FPI/MIS/101"
 		},
 		{
-			"id": 2,
 			"name": "Deputy rector",
 			"id_no": "FPI/MIS/102"
 		},
 		{
-			"id": 3,
 			"name": "Registrar",
 			"id_no": "FPI/MIS/103"
 		},
 		{
-			"id": 4,
 			"name": "Bursar",
 			"id_no": "FPI/MIS/104"
 		},
 		{
-			"id": 5,
 			"name": "Librarian",
 			"id_no": "FPI/MIS/105"
+		},
+		{
+			"name": "Dean",
+			"id_no": "FPI/MIS/106"
 		}
 	],
 	"archives": [
 		{
 			"id": 1,
 			"type": "img",
-			"img": "/images/load.jpg",
+			"img": "/images/home.jpg",
 			"head": "",
 			"title": "First note from the the admin",
 			"body": "",
