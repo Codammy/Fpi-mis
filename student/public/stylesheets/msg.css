@@ -42,12 +42,11 @@ main{
     height: fit-content;
     background-color: var(--secondary-color);
 }
-.message .main{
-
-}
 .message .main p{
     font-size: 15px;
-    margin: auto 15px;
+    line-height: 1.5em;
+    margin: auto 30px;
+    word-spacing: .2em;
 }
 .user{
     padding: 10px;

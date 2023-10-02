@@ -21,7 +21,7 @@ app.use((req, res, next)=>{
 })
 
 //Connecting to Db
-mongoose.connect(dbURI + 'collection')
+mongoose.connect(dbURI)
 .then((res)=>{
 	app.listen(port, ()=>console.log("Server started"))})
 .catch((err)=>console.log(err))

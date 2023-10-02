@@ -23,8 +23,10 @@ adminRoute.get('/history', (req, res)=>{
 adminRoute.get('/create-new', (req, res)=>{
     res.render('admin/views/create-new', {page: {title: ' | create-new', style: '/stylesheet/new.css'}})
 })
-adminRoute.get('/complaint-box', (req, res)=>{
-    res.render('admin/views/inbox', {page: {title: ' | Complaint-box', style: '/stylesheet/inbox.css'}})
+adminRoute.get('/complaint-box', async (req, res)=>{
+    const complaints = await complain.find()
+    console.log(complaints)
+    res.render('admin/views/inbox', {complains: complaints, page: {title: ' | Complaint-box', style: '/stylesheet/inbox.css'}})
 })
 adminRoute.get('/home', (req, res)=>{
     res.render('admin/views/admin', {page: {title: '| Home', style: '/stylesheet/admin.css'}})
@@ -49,7 +51,9 @@ adminRoute.get('/', (req, res)=>{
 })
 
 // Handle post request
-adminRoute.post('/login', (req, res)=>{res.render('admin/views/admin')})
+adminRoute.post('/login', (req, res)=>{res.redirect('/admin/home')
+})
+
 adminRoute.post('/new', (req, res)=>{
 	console.log(req.body)
 	if (req.body.title)

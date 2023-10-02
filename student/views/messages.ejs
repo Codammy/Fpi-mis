@@ -20,9 +20,11 @@
         <section class="main">
           <% if (msg.img) { %>
           <img src="<%= msg.img %>" alt="" />
-          <% } %> <% if (msg.body.length) { %>
+          <% } %>
+           <% if (msg.body.length) { %>
           <p><%= msg.body %></p>
-          <% } %> <% if (msg.type == 'doc') { %>
+          <% } %> 
+          <% if (msg.type == 'doc') { %>
           <p><%= msg.doc %></p>
           <% } %>
         </section>

@@ -28,11 +28,11 @@
       </section>
       <section class="user-info">
         <div class="user-profile item">
-          <% if (user.img.length) { %>
+          <% if (user.img == true ) { %>
           <img src="<%= user.img %>" alt="<%= user.name %>" />
           <% } else {%>
-          <span> No photo </span>
-          <% } %>
+            <img src="/images/user3.png" alt="<%= user.name %>" />
+            <% } %>
         </div>
         <div class="user-id item"><h3><%= user.matric_no %></h3></div>
       </section>
@@ -60,17 +60,21 @@
     <section class="ntc">
       <div class="cover">
         <article class="zero-height drop-down-notification">
-          <% let i = 5 %> <% while (i > 0) {%>
-	  <a href="#" class="eachN">
+          <% notifications.forEach((ntc)=>{ %>
+	  <a href="/admin/messages#<%= ntc.id %>" class="eachN">
           <section>
             <p class="text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-              Voluptatem enim consequatur quibusdam at autem adipisci fugit
-              deleniti repellendus repudiandae nomoi...
+              <% if (ntc.type) {%>
+                Admin sent an attachment, Tap to view.
+                <% } %>
+              <%= ntc.body.slice(0, 175) %>
+              <% if (ntc.body.length > 170) {%>
+                <b style="word-spacing: 2px; color: white;">. . .</b>
+                <% } %>
             </p>
           </section>
 	  </a>
-          <% i-- %> <% } %>
+          <% }) %>
           <p href="#" class="view-clear clear">Clear all</p>
           <a href="/student/messages/#" class="view-clear view">View all</a>
         </article>
