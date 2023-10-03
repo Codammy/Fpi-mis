@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 //Creating message Schema
 memoSchema = new mongoose.Schema({
-	type: String,
+	user_id: {type: mongoose.Schema.Types.ObjectId, ref: 'Admin'},
 	title: String,
 	head: String,
 	body: String,
@@ -10,11 +10,9 @@ memoSchema = new mongoose.Schema({
 		type: String,
 		default: "Signed by:\n\tRector,\n\tDeputy rector,\n\tRegistrar,\n\tBursar,\n\tLibrarian"
 	},
-	file: {
-		name: String,
-		type: String,
-		data: Buffer
-	},
+	filename: String,
+	mimetype: String,
+	data: Buffer,
 	date: { type: Date, default: Date.now}
 }, { timestamps: true })
 

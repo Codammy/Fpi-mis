@@ -7,45 +7,43 @@ nav {
     justify-content: space-between;
     color: white;
     background-color: var(--main-color);
-    height: 7vh;
-}
-
-nav h3 {
+    height: 10vh;
+  }
+  nav h3 {
     margin: auto 20px;
-}
-
-nav ul {
+  }
+  nav ul {
     list-style: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
-}
-
-nav ul li>a {
+  }
+  nav ul li > a {
     color: white;
     text-decoration: none;
-}
-
-nav ul li {
-    margin-right: 50px;
-}
-
-nav ul:nth-child(2) ul {
+  }
+  
+  nav ul li .sub-nav {
     display: none;
-}
-
-nav ul:nth-child(2):hover ul {
-    display: flex;
-    position: fixed;
+  }
+  nav ul li:hover .sub-nav {
+    position: absolute;
+    display: block;
+    margin-left: -140px;
+    z-index: 99;
+  }
+  .sub-nav ul {
+    margin-top: 24px;
     background-color: green;
-    top: 10%;
-    right: 0%;
     padding: 15px;
     border-radius: 5px;
-}
-
-nav ul:nth-child(2) ul li {
-    margin: auto 15px;
-}
+  }
+  .sub-nav ul li {
+    margin: auto 17px;
+  }
+  
+  nav ul li {
+    margin: auto 25px;
+  }
 article{
     display: flex;
     justify-content: center;
@@ -109,6 +107,9 @@ section form button:hover {
 }
 
 @media screen and (max-width: 800px) {
+    nav {
+        height: 8vh;
+    }
     section{
         width: 80vw;
         height: 43vh;

@@ -11,29 +11,43 @@
       </div>
     </header>
     <main>
-      <% for (let i = 0; i < 5; i++) { %>
-      <section class="each">
-          <aside class="sender">
-            <span class="name"><span class="sub-title">Sender-name:</span>adebowale samuel victor</span><br />
-            <span class="matric-no"><span class="sub-title">Matric-no:</span>n/ac/21/6589</span>
+      <% complaint.forEach(complain => { %>
+        <section class="each">
+          <aside class="name info">
+              <span class="sub-title">Sender-name:</span>
+              <% if (complain.student) { %>
+                <span><%= complain.student.name %></span><br />
+                <% } else {%>
+                  <span>N/A</span><br />
+              <% } %>
           </aside>
-          <aside class="title"><span class="sub-title">Title:</span>well being of student on campus</aside>
-          <aside class="body"><span class="sub-title">Body:</span><p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
-            officia natus vero consequatur dolores ab tempore consectetur
-            ducimus. Neque, quisquam?</p>
+          <aside class="matric-no info">
+              <span class="sub-title">Matric-no:</span>
+              <% if (complain.student)  {%>
+                <span><%= complain.student.matric_no %></span><br />
+                <% } else {%>
+                  <span>N/A</span>
+              <% } %>
+          </aside>
+          <aside class="title info">
+              <span class="sub-title">Title:</span>
+              <span><%= complain.title%></span>
+          </aside>
+          <aside class="body info">
+              <span class="sub-title">Body:</span>
+              <p><%= complain.body.slice(0, 125)%></p>
           </aside>
           <aside class="action">
             <div style="transform: rotate(90deg);" class="menu"><i>•</i><i>•</i><i>•</i></i></div>
             <div class="take-action">
-            <span class="read" style="color: green;">Read</span>
+            <span class="read" style="color: green;">Read More</span>
             <span class="delete" style="color: red;">
               Delete
             </span>
           </div>
           </aside>
       </section>
-   <% } %>
+     <% }); %>
     </main>
   </body>
 </html>

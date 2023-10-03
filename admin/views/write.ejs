@@ -1,11 +1,10 @@
 <%- include('./components/head.ejs') %>
 <body>
-<form action"/admin/new" method="POST" class="text-form">
+<form action="/admin/new" method="POST" class="text-form">
     <header>
         <nav>
-            <h3>
-                FPI MIS
-            </h3>
+            <h3><a href="/admin/home">FPI MIS</a></h3>
+        </nav>
         </nav>
  <div class="toggle">
             <button type="submit" id="send" class="">Send</button>
@@ -18,11 +17,11 @@
             <section class="message">
                 <label for="title">
                 </label>
-                    <input name="title" class="title" id="title" placeholder="Title">
+                    <input name="title" class="title" id="title" placeholder="Title" required>
             </section>
             <section class="message">
                 <label for="body"></label>
-                <textarea name="body" class="" id="body" rows="17" placeholder="Write Something"></textarea>
+                <textarea name="body" class="" id="body" rows="17" placeholder="Write Something" required></textarea>
             </section>
         </article>
 </div>

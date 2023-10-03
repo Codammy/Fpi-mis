@@ -1,9 +1,11 @@
 .fa-arrow-left{
-    padding: 20px;
     color: var(--main-color);
+    margin: 25px;
 }
+.fa-arrow-left:hover {
+    text-shadow: 1px 1px 15px rgb(98, 254, 8);
+  }
 img{
-    width: 95%;
     display: block;
     margin: auto;
 }
@@ -12,27 +14,21 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
 }
-header{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 7vh;
-    box-shadow: 0 .3px 5px black;
-    background-color: white;
-}
 nav{
-    margin-left: 15px;
+    width: 100%;
 }
-.image{
-    width: 50px;
+header{
+    height: 10vh;
+    box-shadow: 0 .3px 2px black;
     background-color: white;
-    border-radius: 50%;
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 main{
     height: 100%;
     overflow-y: scroll;
     margin: 25px auto;
-
 }
 .message{
     margin: 15px auto;
@@ -66,4 +62,9 @@ footer{
     display: none;
     justify-content: center;
     align-items: center;
+}
+@media (max-width: 800px) {
+    header {
+        height: 7vh;
+    }
 }

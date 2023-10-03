@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   color: white;
   background-color: var(--main-color);
-  height: 7vh;
+  height: 10vh;
 }
 
 nav h3 {
@@ -154,6 +154,9 @@ button[type = 'submit']:hover, button[type = 'submit']:focus{
 }
 @media screen and (max-width: 800px)
 {
+  nav {
+    height: 7vh;
+}
   .make-complain{
   width: 90%;
   }

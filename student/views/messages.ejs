@@ -3,15 +3,15 @@
   <%- include('./components/head.ejs') %>
   <body>
     <header>
-      <div class="image">
-        <img src="/images/user3.png" alt="" />
-      </div>
-      <nav>Admin - 1</nav>
-    </header>
-    <main class="page">
       <a href="/student/dashboard">
         <i class="fa-solid fa-arrow-left fa-lg"></i>
       </a>
+      <nav>
+        <img src="/images/user3.png" alt="Admin" width="50" height="50"/>
+        <small style="text-align: center; display: block; color: green;">Admin</small>
+      </nav>
+    </header>
+    <main class="page">
       <% data.forEach(function(msg) {%>
       <article class="message">
         <aside class="user">

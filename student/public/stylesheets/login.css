@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   color: white;
   background-color: var(--main-color);
-  height: 7vh;
+  height: 10vh;
 }
 nav h3 {
   margin: auto 20px;
@@ -176,6 +176,9 @@ input:focus {
   cursor: pointer;
 }
 @media screen and (max-width: 800px) {
+  nav {
+    height: 7vh;
+}
   .split {
     display: none;
   }

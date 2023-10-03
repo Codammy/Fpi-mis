@@ -10,17 +10,12 @@ const app = express()
 // App config middleware
 app.set('view engine', 'ejs')
 app.set('views', '.')
+app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(__dirname + '/student/public'))
 app.use(express.static(__dirname + '/admin/publi'))
 
-//
-app.use((req, res, next)=>{
-	console.log(req.hostname, req.method, req.path);
-	next()
-})
-
-//Connecting to Db
+// Connecting to Db
 mongoose.connect(dbURI)
 .then((res)=>{
 	app.listen(port, ()=>console.log("Server started"))})
@@ -41,4 +36,3 @@ app.use('/student', student)
 app.use((req, res)=>{
     res.status(404).sendFile('404.html', {root: __dirname})
 })
-//app.listen(port)

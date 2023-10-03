@@ -11,9 +11,7 @@ form{
 .text-form{
 	width: 100%;
 	margin: auto;
-	height: 100%:
-}
-.format{
+	height: 100%;
 }
 header {
     display: flex;
@@ -29,8 +27,7 @@ header nav{
     padding: 5px;
     display: flex;
     margin: auto 45px;
-   /* background-color: #f0e260;*/
-    background-color: #98FF98;
+    background-color: white;
     width: fit-content;
     border-radius: 3px;
     height: 5vh;
@@ -62,7 +59,7 @@ select{
     border-style: dashed;
 }
 .decorate-p{
-    font-size: 20px;
+    /* font-size: 20px; */
     opacity: .8;
 }
 .hide{
@@ -80,22 +77,16 @@ select{
     opacity: .65;
     border-radius: 7px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 25px auto;
-}
+}#file-icon{margin: 15px auto;}
 .fa-xmark{
     position: absolute;
     top: 15%;
     right: 15%;
     color: orangered;
-}
-input[type='file']{
-    display: none;
-}
-.include_{
-    display: block;
-    margin: 15px 0;
 }
 .button{
     width: 100px;
