@@ -17,7 +17,6 @@ adminRoute.get('/login', (req, res) => {
 })
 adminRoute.get('/history', async (req, res) => {
     const history = await memo.find().sort({ createdAt: -1 })
-    console.log(history);
     res.render('admin/views/history', { history, page: { title: ' | History', style: '' } })
 })
 adminRoute.get('/create-new', (req, res) => {
@@ -25,20 +24,14 @@ adminRoute.get('/create-new', (req, res) => {
 })
 adminRoute.get('/complaint-box', async (req, res) => {
     const complaints = await complain.find().sort({ createdAt: -1 })
-    console.log(complaints, complaints.student_id)
     res.render('admin/views/inbox', { complaint: complaints, page: { title: ' | Complaint-box', style: '/stylesheet/inbox.css' } })
 })
 adminRoute.get('/home', (req, res) => {
     res.render('admin/views/admin', { page: { title: '| Home', style: '/stylesheet/admin.css' } })
 })
-adminRoute.get('/archive', (req, res) => {
-    fs.readFile('./local-db/admins.json', (err, data) => {
-        if (err)
-            console.log(err)
-        else {
-            res.render('admin/views/archive', { data: JSON.parse(data.toString()), page: { title: ' | Archive', style: '/stylesheet/arc.css' } })
-        }
-    })
+adminRoute.get('/archive', async (req, res) => {
+    const posts = await memo.find()
+    res.render('admin/views/archive', { data: posts, page: { title: ' | Archive', style: '/stylesheet/arc.css' } })
 })
 
 adminRoute.get('/new', (req, res) => {
@@ -56,7 +49,6 @@ adminRoute.post('/login', (req, res) => {
 
 adminRoute.post('/new', (req, res) => {
     if (req.body.title) {
-        req.body.type = 'txt'
         const newMessage = new memo(req.body)
         newMessage.save()
             .then(() => res.redirect('/admin/home'))
@@ -66,15 +58,16 @@ adminRoute.post('/new', (req, res) => {
 
 adminRoute.post('/newfile', upload.single('file'), (req, res) => {
     console.log(req.file);
-    const { originalname, mimetype, buffer} = req.file
+    const { originalname, mimetype, buffer, fieldname, encoding} = req.file
     const newfile = new memo({
+        fieldname,
         filename: originalname,
-        mimetype: mimetype,
+        encoding,
+        mimetype,
         data: buffer
     })
     newfile.save().then(() => {
-        console.log(newfile);
-        res.json({ message: "File upload sucessfully" })
+        res.redirect('/admin/home')
     }).catch(err => {
         console.log(err)
         res.json({ message: "File upload failed" })

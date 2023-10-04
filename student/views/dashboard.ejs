@@ -61,19 +61,17 @@
       <div class="cover">
         <article class="zero-height drop-down-notification">
           <% notifications.forEach((ntc)=>{ %>
-	  <a href="/admin/messages#<%= ntc.id %>" class="eachN">
+	      <a href="/student/messages/%>" class="eachN" id="more-deails <% ntc.id %>">
           <section>
             <p class="text">
-              <% if (ntc.type) {%>
-                Admin sent an attachment, Tap to view.
-                <% } %>
-              <%= ntc.body.slice(0, 175) %>
-              <% if (ntc.body.length > 170) {%>
-                <b style="word-spacing: 2px; color: white;">. . .</b>
-                <% } %>
+              <% if (ntc.data) {%>
+              Admin sent an attachment, Tap to view.
+                <% } else if (ntc.body) {%>
+              <%= ntc.body.slice(0, 175) %>. . .
+              <% } %>
             </p>
           </section>
-	  </a>
+	      </a>
           <% }) %>
           <p href="#" class="view-clear clear">Clear all</p>
           <a href="/student/messages/#" class="view-clear view">View all</a>
@@ -81,47 +79,8 @@
       </div>
       <i class="fa-solid cancel"></i>
     </section>
-    <script>
-      const complain = document.querySelector(".problem-lg");
-      const makeComplain = document.querySelector(".hide");
-      const form = makeComplain.children[0];
-      let condition = true;
-      function occur(c) {
-        console.log(c);
-        if (c) {
-          makeComplain.className = "make-complain";
-          form.classList.remove("cmp");
-        } else {
-          makeComplain.className = "hide";
-          form.classList.add("cmp");
-        }
-        return !c;
-      }
-      complain.addEventListener("click", () => {
-        condition = occur(condition);
-      });
+    <script src="/javascripts/fetch.js">
 
-      const blackCover = document.querySelector(".cover");
-      const ntc = document.querySelector(".drop-down-notification");
-      const bell = document.querySelector(".fa-bell");
-      const cancleNtc = document.querySelector(".cancel");
-      bell.addEventListener("click", (e) => {	
-        blackCover.classList.add("black-cover");
-        ntc.classList.add("max-height");
-        blackCover.classList.remove("zero-height");
-        ntc.firstElementChild.style.display = "block";
-        cancelNtc.classList.add("fa-xmark");
-      });
-      ntc.addEventListener('click', (e)=>{
-	      e.stopPropagation()
-      })
-      blackCover.addEventListener("click", () => {
-        blackCover.classList.remove("black-cover");
-        blackCover.classList.remove("max-height");
-        blackCover.classList.add("zero-height");
-        ntc.firstElementChild.style.display = "none";
-        bell.classList.remove("fa-xmark");
-      });
     </script>
   </body>
 </html>

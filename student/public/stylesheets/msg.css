@@ -10,7 +10,6 @@ img{
     margin: auto;
 }
 body{
-    overflow-y: hidden;
     font-family: Arial, Helvetica, sans-serif;
     height: 100%;
 }
@@ -18,16 +17,20 @@ nav{
     width: 100%;
 }
 header{
+    position: sticky;
     height: 10vh;
     box-shadow: 0 .3px 2px black;
     background-color: white;
     display: flex;
     justify-self: center;
     align-items: center;
+    top: 0%;
+}
+#imgmsg{
+    max-width: 100%;
+    border-radius: 10px;
 }
 main{
-    height: 100%;
-    overflow-y: scroll;
     margin: 25px auto;
 }
 .message{
@@ -54,17 +57,23 @@ main{
     text-align: end;
 }
 footer{
-    height: 5%;
-    position: fixed;
-    bottom: 0;
     width: 100%;
-    background-color: rgb(131, 123, 123);
-    display: none;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
+}
+footer small{
+    display: block;
+    margin: 15px;
 }
 @media (max-width: 800px) {
     header {
         height: 7vh;
+    }
+    #admin {
+        width: 25px;
+        height: 25px;
+    }
+    #imgmsg{
+        max-width: 100%;
+        border-radius: none;
     }
 }

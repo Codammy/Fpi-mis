@@ -7,26 +7,23 @@
         <i class="fa-solid fa-arrow-left fa-lg"></i>
       </a>
       <nav>
-        <img src="/images/user3.png" alt="Admin" width="50" height="50"/>
+        <img src="/images/user3.png" alt="Admin" width="50" height="50" id="admin"/>
         <small style="text-align: center; display: block; color: green;">Admin</small>
       </nav>
     </header>
-    <main class="page">
+ <main class="page">
       <% data.forEach(function(msg) {%>
-      <article class="message">
+      <article class="message" id="<% msg._id %>">
         <aside class="user">
           <small>--- Admin 7 ---</small>
         </aside>
         <section class="main">
-          <% if (msg.img) { %>
-          <img src="<%= msg.img %>" alt="" />
+          <% if (msg.data) { %>
+          <img src="data:<% msg.mimetype%>;base64, <%= msg.data.toString('base64')%>" alt="<% msg.filename %>" id="imgmsg"/>
           <% } %>
-           <% if (msg.body.length) { %>
+           <% if (msg.body) { %>
           <p><%= msg.body %></p>
           <% } %> 
-          <% if (msg.type == 'doc') { %>
-          <p><%= msg.doc %></p>
-          <% } %>
         </section>
         <aside class="time">
           <small>19:45</small>

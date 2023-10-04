@@ -15,8 +15,7 @@ studentRoute.get('/messages', async (req, res)=>{
 })
 studentRoute.get('/dashboard', async (req, res)=>{
         const su = await student.findOne()
-        const posts = await memo.find()
-        console.log(su);
+        const posts = await memo.find().sort({createdAt: -1})
         res.render('student/views/dashboard', { user: su, notifications: posts, page: {title: ' | Dashboard', style: '/stylesheets/student.css'}})
 })
 studentRoute.get('/', (req, res)=>{
@@ -25,9 +24,7 @@ studentRoute.get('/', (req, res)=>{
 
 // handling post request
 studentRoute.post('/login', async (req, res)=>{
-    const su = await student.findOne()
-    const posts = await memo.find()
-    res.render('student/views/dashboard', { user: su, notifications: posts, page: {title: ' | Dashboard', style: '/stylesheets/student.css'}})
+    res.redirect('/student/dashboard')
 })
 
 studentRoute.post('/complain', async (req, res)=>{
