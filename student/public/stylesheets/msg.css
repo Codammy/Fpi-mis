@@ -5,6 +5,13 @@
 .fa-arrow-left:hover {
     text-shadow: 1px 1px 15px rgb(98, 254, 8);
   }
+.sort-by {
+	margin: 10px 15px 10px 70%;
+	border: thin solid black;
+	border-radius: 15px;
+	text-align: center;
+	padding: 4px;
+}
 img{
     display: block;
     margin: auto;
@@ -31,7 +38,15 @@ header{
     border-radius: 10px;
 }
 main{
+	color: white;
     margin: 25px auto;
+}
+main h2{
+	padding: 15px 20px;
+	background-color: #011800;
+	width: 90%;
+	border-radius: 10px;
+	margin: 5px auto;
 }
 .message{
     margin: 15px auto;
@@ -48,6 +63,8 @@ main{
     word-spacing: .2em;
 }
 .user{
+	display: flex;
+	justify-content: space-between;
     padding: 10px;
     width: 100%;
 }
@@ -74,6 +91,6 @@ footer small{
     }
     #imgmsg{
         max-width: 100%;
-        border-radius: none;
+        border-radius: 0;
     }
 }

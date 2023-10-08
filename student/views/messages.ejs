@@ -11,22 +11,36 @@
         <small style="text-align: center; display: block; color: green;">Admin</small>
       </nav>
     </header>
+	 <div class="sort-by">Sorted by latest</div>
  <main class="page">
       <% data.forEach(function(msg) {%>
+      <% const date = new Date(msg.createdAt)%>
       <article class="message" id="<% msg._id %>">
         <aside class="user">
           <small>--- Admin 7 ---</small>
+	  <small><%= date.toDateString() %></small>
         </aside>
         <section class="main">
           <% if (msg.data) { %>
+	  <a href="/student/messages/<%= msg._id %>">
+	  <h2><%= msg.filename.split(".")[0] %></h2>
           <img src="data:<% msg.mimetype%>;base64, <%= msg.data.toString('base64')%>" alt="<% msg.filename %>" id="imgmsg"/>
+	  </a>
           <% } %>
            <% if (msg.body) { %>
-          <p><%= msg.body %></p>
+	   <h2><%= msg.title %></h2>
+	   <p id="post-content" data-doc="<%= msg.body %>"></ p>
+    <script>
+	    var text = document.getElementById("post-content")
+	    console.log(text.dataset.toString())
+	    text.innerHTML = text.dataset.doc.toString()
+    </script>
           <% } %> 
         </section>
         <aside class="time">
-          <small>19:45</small>
+		<small><%= date.getHours() %> :
+		<% if (date.getMinutes() < 10) {%><span>0</span><% } %><%=date.getMinutes() %>
+		</small><br />
         </aside>
       </article>
       <% })%>

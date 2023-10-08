@@ -61,17 +61,15 @@
       <div class="cover">
         <article class="zero-height drop-down-notification">
           <% notifications.forEach((ntc)=>{ %>
-	      <a href="/student/messages/%>" class="eachN" id="more-deails <% ntc.id %>">
-          <section>
-            <p class="text">
+          <section class="eachN">
+            <a href="/admin/messages" class="text">
               <% if (ntc.data) {%>
               Admin sent an attachment, Tap to view.
                 <% } else if (ntc.body) {%>
               <%= ntc.body.slice(0, 175) %>. . .
               <% } %>
-            </p>
+            </a>
           </section>
-	      </a>
           <% }) %>
           <p href="#" class="view-clear clear">Clear all</p>
           <a href="/student/messages/#" class="view-clear view">View all</a>

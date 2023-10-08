@@ -1,3 +1,7 @@
+.greeting{
+	font-family: Times, Times new Roman;
+	width: 50%;
+}
 nav {
   display: flex;
   justify-content: space-between;

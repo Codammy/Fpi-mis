@@ -17,6 +17,7 @@ adminRoute.get('/login', (req, res) => {
 })
 adminRoute.get('/history', async (req, res) => {
     const history = await memo.find().sort({ createdAt: -1 })
+	console.log(history.date)
     res.render('admin/views/history', { history, page: { title: ' | History', style: '' } })
 })
 adminRoute.get('/create-new', (req, res) => {
@@ -24,6 +25,7 @@ adminRoute.get('/create-new', (req, res) => {
 })
 adminRoute.get('/complaint-box', async (req, res) => {
     const complaints = await complain.find().sort({ createdAt: -1 })
+	console.log(complaints.date)
     res.render('admin/views/inbox', { complaint: complaints, page: { title: ' | Complaint-box', style: '/stylesheet/inbox.css' } })
 })
 adminRoute.get('/home', (req, res) => {
@@ -31,6 +33,7 @@ adminRoute.get('/home', (req, res) => {
 })
 adminRoute.get('/archive', async (req, res) => {
     const posts = await memo.find()
+	console.log(posts.date)
     res.render('admin/views/archive', { data: posts, page: { title: ' | Archive', style: '/stylesheet/arc.css' } })
 })
 
