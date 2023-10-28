@@ -89,6 +89,9 @@ footer small{
         width: 25px;
         height: 25px;
     }
+    .message {
+	    width: 97%;
+    }
     #imgmsg{
         max-width: 100%;
         border-radius: 0;
