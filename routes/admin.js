@@ -17,7 +17,6 @@ adminRoute.get('/login', (req, res) => {
 })
 adminRoute.get('/history', async (req, res) => {
     const history = await memo.find().sort({ createdAt: -1 })
-	console.log(history.date)
     res.render('admin/views/history', { history, page: { title: ' | History', style: '' } })
 })
 adminRoute.get('/create-new', (req, res) => {
@@ -60,7 +59,6 @@ adminRoute.post('/new', (req, res) => {
 })
 
 adminRoute.post('/newfile', upload.single('file'), (req, res) => {
-    console.log(req.file);
     const { originalname, mimetype, buffer, fieldname, encoding} = req.file
     const newfile = new memo({
         fieldname,
