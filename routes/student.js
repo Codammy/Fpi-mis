@@ -30,7 +30,19 @@ studentRoute.get('/', (req, res)=>{
 
 // handling post request
 studentRoute.post('/login', async (req, res)=>{
-    res.redirect('/student/dashboard')
+	const {user, pass} = {...req.body}
+	try{
+	const loginUser =  await student.findOne({matric_no: user})
+		console.log(loginUser)
+		if (!loginUser || pass !== loginUser.password)
+		{
+			res.send("<h2 style='font-family: monospace; margin: 15px; color: red'>Incorrect login details</h2>")
+		}
+    		res.redirect('/student/dashboard')
+	}
+	catch (err){
+		console.log(err)
+	}
 })
 studentRoute.post('/complain', async (req, res)=>{
 	const result = await complain.create(req.body)

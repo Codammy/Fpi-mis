@@ -45,8 +45,19 @@ adminRoute.get('/', (req, res) => {
 })
 
 // Handle post request
-adminRoute.post('/login', (req, res) => {
-    res.redirect('/admin/home')
+adminRoute.post('/login', async (req, res) => {
+	try{
+	const loginUser =  await Admin.findOne({id_no: req.body.user_name})
+		if (req.body.password !== loginUser.password)
+		{
+			res.send("<h2 style='font-family: monospace; margin: 15px; color: red'>Incorrect login details</h2>")
+		}
+		res.redirect('/admin/home')
+		console.log(loginUser)
+	}
+	catch (err){
+		console.log(err)
+	}
 })
 
 adminRoute.post('/new', (req, res) => {
